@@ -3,35 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="SalvadorFit: reserve seu treino nas academias de Salvador, BA.">
-  <title>SalvadorFit | Reservas de academia em Salvador</title>
+  <meta name="description" content="Rota do Dendê: reservas de passeios guiados em Salvador, BA.">
+  <title>Rota do Dendê | Passeios guiados em Salvador</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-slate-100 text-slate-800 antialiased">
-
+<body class="bg-stone-100 text-stone-900 antialiased">
   <header>
     <nav class="sticky top-0 z-40 bg-slate-900 text-white shadow-lg" aria-label="Navegação principal">
-      <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
-        <a href="#inicio" class="text-xl font-bold tracking-tight">
-          Salvador<span class="text-emerald-400">Fit</span>
-        </a>
-        <ul class="hidden items-center gap-6 text-sm font-medium md:flex">
-          <li><a href="#inicio" class="text-emerald-400" aria-current="page">Início</a></li>
-          <li><a href="#academias" class="transition hover:text-emerald-400">Academias</a></li>
-          <li><a href="#horarios" class="transition hover:text-emerald-400">Horários</a></li>
-          <li><a href="#reservar" class="transition hover:text-emerald-400">Reservar</a></li>
+      <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
+        <a href="#inicio" class="text-xl font-bold tracking-tight focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400">Rota do <span class="text-amber-400">Dendê</span></a>
+        <ul class="hidden items-center gap-7 text-sm font-medium md:flex">
+          <li><a href="#inicio" class="text-amber-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400" aria-current="page">Início</a></li>
+          <li><a href="#passeios" class="transition hover:text-amber-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400">Passeios</a></li>
+          <li><a href="#saidas" class="transition hover:text-amber-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400">Saídas</a></li>
+          <li><a href="#reservar" class="transition hover:text-amber-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400">Reservar</a></li>
         </ul>
-        <button type="button" id="botaoMenu" class="rounded-lg p-2 text-slate-200 hover:bg-slate-800 md:hidden" aria-controls="menuMobile" aria-expanded="false" aria-label="Abrir menu de navegação">
+        <button type="button" id="botaoMenu" class="rounded-lg p-2 text-stone-200 hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 md:hidden" aria-controls="menuMobile" aria-expanded="false" aria-label="Abrir menu de navegação">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
           </svg>
         </button>
       </div>
       <div id="menuMobile" class="hidden border-t border-slate-800 md:hidden">
         <ul class="flex flex-col gap-1 px-4 py-3 text-sm font-medium">
-          <li><a href="#inicio" class="block rounded-lg px-3 py-2 text-emerald-400">Início</a></li>
-          <li><a href="#academias" class="block rounded-lg px-3 py-2 hover:bg-slate-800">Academias</a></li>
-          <li><a href="#horarios" class="block rounded-lg px-3 py-2 hover:bg-slate-800">Horários</a></li>
+          <li><a href="#inicio" class="block rounded-lg px-3 py-2 text-amber-400">Início</a></li>
+          <li><a href="#passeios" class="block rounded-lg px-3 py-2 hover:bg-slate-800">Passeios</a></li>
+          <li><a href="#saidas" class="block rounded-lg px-3 py-2 hover:bg-slate-800">Saídas</a></li>
           <li><a href="#reservar" class="block rounded-lg px-3 py-2 hover:bg-slate-800">Reservar</a></li>
         </ul>
       </div>
@@ -39,161 +36,351 @@
   </header>
 
   <main>
-
-    <section id="inicio" class="scroll-mt-20 py-10 lg:py-14" aria-labelledby="titulo-inicial">
-      <div class="mx-auto max-w-6xl px-4">
+    <section id="inicio" class="scroll-mt-20 bg-stone-100 py-10 lg:py-16" aria-labelledby="tituloInicial">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
         <div class="mb-8 text-center">
-          <h1 id="titulo-inicial" class="text-4xl font-extrabold tracking-tight text-slate-900 md:text-5xl">Seu treino em Salvador começa aqui</h1>
-          <p class="mt-3 text-lg text-slate-600">Conheça nossas unidades na orla e reserve sua aula experimental.</p>
+          <h1 id="tituloInicial" class="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">Salvador além do cartão-postal</h1>
+          <p class="mx-auto mt-4 max-w-3xl text-lg text-stone-600">Passeios guiados pelo centro histórico, pela orla e pelas ilhas da Baía de Todos-os-Santos.</p>
         </div>
 
-        <div id="carrosselAcademias" class="relative overflow-hidden rounded-2xl shadow-xl" role="region" aria-roledescription="carrossel" aria-label="Destaques das academias SalvadorFit">
+        <section id="carrosselPasseios" class="relative overflow-hidden rounded-3xl shadow-xl" aria-roledescription="carrossel" aria-label="Destaques de passeios em Salvador">
           <div id="trilhaCarrossel" class="flex transition-transform duration-500 ease-in-out">
-            <div class="relative w-full shrink-0" role="group" aria-roledescription="slide" aria-label="Slide 1 de 3">
-              <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" class="h-[320px] w-full object-cover sm:h-[420px] md:h-[520px]" alt="Sala de musculação com halteres e equipamentos">
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent"></div>
-              <div class="absolute bottom-0 left-0 p-6 text-white md:p-10">
-                <h2 class="text-2xl font-bold md:text-3xl">Unidade Barra</h2>
-                <p class="mt-1 text-slate-100">Musculação completa a poucos metros do Farol da Barra.</p>
+            <div class="relative w-full shrink-0" role="group" aria-roledescription="slide" aria-label="1 de 3">
+              <svg class="block h-[340px] w-full sm:h-[460px] lg:h-[540px]" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ilustração de casarões coloridos do Pelourinho ao entardecer">
+                <defs>
+                  <linearGradient id="ceuPelourinho" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#fde68a"/>
+                    <stop offset="50%" stop-color="#f59e0b"/>
+                    <stop offset="100%" stop-color="#c2410c"/>
+                  </linearGradient>
+                  <linearGradient id="ruaPelourinho" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#57534e"/>
+                    <stop offset="100%" stop-color="#1c1917"/>
+                  </linearGradient>
+                </defs>
+                <rect width="1600" height="900" fill="url(#ceuPelourinho)"/>
+                <circle cx="1240" cy="230" r="120" fill="#fffbeb" opacity="0.9"/>
+                <path d="M0 570 L180 490 L360 550 L540 470 L760 545 L960 465 L1160 540 L1360 470 L1600 550 L1600 900 L0 900 Z" fill="#7c2d12" opacity="0.28"/>
+                <rect y="650" width="1600" height="250" fill="url(#ruaPelourinho)"/>
+                <g>
+                  <rect x="30" y="470" width="240" height="260" fill="#0f766e"/>
+                  <rect x="30" y="448" width="240" height="30" fill="#115e59"/>
+                  <rect x="70" y="515" width="55" height="80" fill="#1c1917"/>
+                  <rect x="175" y="515" width="55" height="80" fill="#1c1917"/>
+                  <path d="M105 730 V680 a45 45 0 0 1 90 0 v50 z" fill="#fbbf24"/>
+                </g>
+                <g>
+                  <rect x="290" y="420" width="260" height="310" fill="#c2410c"/>
+                  <rect x="290" y="396" width="260" height="32" fill="#9a3412"/>
+                  <rect x="330" y="470" width="60" height="85" fill="#1c1917"/>
+                  <rect x="450" y="470" width="60" height="85" fill="#1c1917"/>
+                  <rect x="330" y="590" width="60" height="85" fill="#1c1917"/>
+                  <rect x="450" y="590" width="60" height="85" fill="#1c1917"/>
+                </g>
+                <g>
+                  <rect x="570" y="455" width="230" height="275" fill="#f59e0b"/>
+                  <rect x="570" y="432" width="230" height="30" fill="#b45309"/>
+                  <rect x="610" y="505" width="55" height="80" fill="#1c1917"/>
+                  <rect x="705" y="505" width="55" height="80" fill="#1c1917"/>
+                  <path d="M635 730 V675 a38 38 0 0 1 76 0 v55 z" fill="#0f766e"/>
+                </g>
+                <g>
+                  <rect x="820" y="405" width="270" height="325" fill="#f5f5f4"/>
+                  <rect x="820" y="380" width="270" height="32" fill="#d6d3d1"/>
+                  <rect x="860" y="455" width="60" height="90" fill="#1c1917"/>
+                  <rect x="990" y="455" width="60" height="90" fill="#1c1917"/>
+                  <rect x="860" y="585" width="60" height="90" fill="#1c1917"/>
+                  <rect x="990" y="585" width="60" height="90" fill="#1c1917"/>
+                </g>
+                <g>
+                  <rect x="1110" y="450" width="240" height="280" fill="#2563eb"/>
+                  <rect x="1110" y="426" width="240" height="30" fill="#1e40af"/>
+                  <rect x="1150" y="500" width="55" height="80" fill="#1c1917"/>
+                  <rect x="1255" y="500" width="55" height="80" fill="#1c1917"/>
+                  <path d="M1180 730 V680 a40 40 0 0 1 80 0 v50 z" fill="#fbbf24"/>
+                </g>
+                <g>
+                  <rect x="1370" y="430" width="200" height="300" fill="#0f766e"/>
+                  <rect x="1370" y="406" width="200" height="30" fill="#115e59"/>
+                  <rect x="1405" y="480" width="50" height="75" fill="#1c1917"/>
+                  <rect x="1485" y="480" width="50" height="75" fill="#1c1917"/>
+                  <rect x="1405" y="600" width="50" height="75" fill="#1c1917"/>
+                </g>
+                <g stroke="#fcd34d" stroke-width="4" opacity="0.55">
+                  <path d="M0 760 H1600"/>
+                  <path d="M0 820 H1600"/>
+                  <path d="M0 880 H1600"/>
+                </g>
+                <g stroke="#1c1917" stroke-width="9" stroke-linecap="round">
+                  <path d="M600 860 V760"/>
+                  <path d="M1080 860 V760"/>
+                </g>
+                <g fill="#fbbf24">
+                  <circle cx="600" cy="748" r="14"/>
+                  <circle cx="1080" cy="748" r="14"/>
+                </g>
+              </svg>
+              <div class="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/45 to-transparent"></div>
+              <div class="absolute inset-x-0 bottom-0 p-5 text-white sm:p-8 lg:p-10">
+                <span class="inline-block rounded-full bg-amber-400 px-3 py-1 text-xs font-bold uppercase tracking-wide text-slate-900">Centro histórico</span>
+                <h2 class="mt-3 text-2xl font-bold sm:text-3xl">Pelourinho ao entardecer</h2>
+                <p class="mt-2 max-w-xl text-sm text-stone-200 sm:text-base">Caminhada guiada pelas ladeiras coloridas e pelas igrejas barrocas do centro histórico.</p>
               </div>
             </div>
-            <div class="relative w-full shrink-0" role="group" aria-roledescription="slide" aria-label="Slide 2 de 3">
-              <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" class="h-[320px] w-full object-cover sm:h-[420px] md:h-[520px]" alt="Área ampla de treino com equipamentos modernos">
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent"></div>
-              <div class="absolute bottom-0 left-0 p-6 text-white md:p-10">
-                <h2 class="text-2xl font-bold md:text-3xl">Unidade Rio Vermelho</h2>
-                <p class="mt-1 text-slate-100">Aulas coletivas e espaço funcional no coração do bairro.</p>
+
+            <div class="relative w-full shrink-0" role="group" aria-roledescription="slide" aria-label="2 de 3">
+              <svg class="block h-[340px] w-full sm:h-[460px] lg:h-[540px]" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ilustração do Farol da Barra durante o pôr do sol">
+                <defs>
+                  <linearGradient id="ceuFarol" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#0f172a"/>
+                    <stop offset="55%" stop-color="#7c2d12"/>
+                    <stop offset="100%" stop-color="#f59e0b"/>
+                  </linearGradient>
+                  <linearGradient id="marFarol" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#0f766e"/>
+                    <stop offset="100%" stop-color="#0f172a"/>
+                  </linearGradient>
+                </defs>
+                <rect width="1600" height="540" fill="url(#ceuFarol)"/>
+                <circle cx="430" cy="500" r="100" fill="#fbbf24" opacity="0.92"/>
+                <rect y="520" width="1600" height="380" fill="url(#marFarol)"/>
+                <g stroke="#fbbf24" stroke-linecap="round" opacity="0.6">
+                  <path d="M380 620 H480" stroke-width="6"/>
+                  <path d="M340 690 H520" stroke-width="8"/>
+                  <path d="M400 760 H460" stroke-width="5"/>
+                </g>
+                <g transform="translate(1020 250)">
+                  <path d="M85 120 H165 L200 430 H50 Z" fill="#f5f5f4"/>
+                  <path d="M75 205 H175 L185 270 H65 Z" fill="#c2410c"/>
+                  <path d="M60 325 H190 L198 385 H52 Z" fill="#c2410c"/>
+                  <rect x="65" y="80" width="120" height="40" fill="#1c1917"/>
+                  <rect x="90" y="38" width="70" height="42" fill="#fbbf24"/>
+                  <path d="M90 38 L125 0 L160 38 Z" fill="#f5f5f4"/>
+                  <path d="M90 58 L0 22 V86 Z" fill="#fbbf24" opacity="0.28"/>
+                  <path d="M160 58 L250 22 V86 Z" fill="#fbbf24" opacity="0.28"/>
+                  <rect x="118" y="255" width="14" height="40" fill="#1c1917"/>
+                </g>
+                <g>
+                  <rect x="820" y="700" width="780" height="200" fill="#292524"/>
+                  <rect x="820" y="670" width="780" height="30" fill="#44403c"/>
+                  <rect x="860" y="610" width="70" height="60" fill="#44403c"/>
+                  <rect x="970" y="630" width="55" height="40" fill="#44403c"/>
+                  <rect x="1250" y="620" width="80" height="50" fill="#44403c"/>
+                  <rect x="1420" y="640" width="60" height="30" fill="#44403c"/>
+                </g>
+                <g stroke="#0f172a" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.7">
+                  <path d="M760 300 q20 -18 40 0 q20 -18 40 0"/>
+                  <path d="M860 240 q16 -14 32 0 q16 -14 32 0"/>
+                  <path d="M700 220 q14 -12 28 0 q14 -12 28 0"/>
+                </g>
+              </svg>
+              <div class="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/45 to-transparent"></div>
+              <div class="absolute inset-x-0 bottom-0 p-5 text-white sm:p-8 lg:p-10">
+                <span class="inline-block rounded-full bg-amber-400 px-3 py-1 text-xs font-bold uppercase tracking-wide text-slate-900">Orla</span>
+                <h2 class="mt-3 text-2xl font-bold sm:text-3xl">Farol da Barra e pôr do sol</h2>
+                <p class="mt-2 max-w-xl text-sm text-stone-200 sm:text-base">Trilha leve pela orla com parada no forte e vista para a Baía de Todos-os-Santos.</p>
               </div>
             </div>
-            <div class="relative w-full shrink-0" role="group" aria-roledescription="slide" aria-label="Slide 3 de 3">
-              <img src="https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" class="h-[320px] w-full object-cover sm:h-[420px] md:h-[520px]" alt="Pessoa treinando com acompanhamento profissional">
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent"></div>
-              <div class="absolute bottom-0 left-0 p-6 text-white md:p-10">
-                <h2 class="text-2xl font-bold md:text-3xl">Unidade Pituba</h2>
-                <p class="mt-1 text-slate-100">Treino personalizado e avaliação física perto da Avenida Tancredo Neves.</p>
+
+            <div class="relative w-full shrink-0" role="group" aria-roledescription="slide" aria-label="3 de 3">
+              <svg class="block h-[340px] w-full sm:h-[460px] lg:h-[540px]" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ilustração de uma escuna navegando pelas ilhas da Baía de Todos-os-Santos">
+                <defs>
+                  <linearGradient id="ceuIlhas" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#bae6fd"/>
+                    <stop offset="60%" stop-color="#fef3c7"/>
+                    <stop offset="100%" stop-color="#fcd34d"/>
+                  </linearGradient>
+                  <linearGradient id="marIlhas" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#0ea5e9"/>
+                    <stop offset="100%" stop-color="#0f766e"/>
+                  </linearGradient>
+                </defs>
+                <rect width="1600" height="900" fill="url(#ceuIlhas)"/>
+                <circle cx="1300" cy="190" r="95" fill="#fbbf24" opacity="0.85"/>
+                <rect y="500" width="1600" height="400" fill="url(#marIlhas)"/>
+                <path d="M0 540 Q110 470 240 540 Q330 500 430 540 Q540 480 660 540 Q780 500 900 540 Q1020 480 1140 540 Q1260 500 1380 540 Q1470 510 1600 540 V580 H0 Z" fill="#115e59" opacity="0.75"/>
+                <g>
+                  <path d="M860 690 H1230 L1150 760 H940 Z" fill="#c2410c"/>
+                  <path d="M1040 690 V430" stroke="#1c1917" stroke-width="10"/>
+                  <path d="M1040 450 L1180 660 H1040 Z" fill="#f5f5f4"/>
+                  <path d="M1030 480 L920 660 H1030 Z" fill="#e7e5e4"/>
+                  <path d="M1040 430 L1140 460 L1040 500 Z" fill="#fbbf24"/>
+                </g>
+                <g stroke="#f0fdfa" stroke-width="6" stroke-linecap="round" opacity="0.55">
+                  <path d="M700 800 Q760 780 820 800"/>
+                  <path d="M880 840 Q940 820 1000 840"/>
+                  <path d="M1120 810 Q1180 790 1240 810"/>
+                  <path d="M760 870 Q830 850 900 870"/>
+                </g>
+                <g fill="none" stroke="#1c1917" stroke-width="4" stroke-linecap="round" opacity="0.55">
+                  <path d="M420 260 q16 -14 32 0 q16 -14 32 0"/>
+                  <path d="M520 210 q14 -12 28 0 q14 -12 28 0"/>
+                  <path d="M610 300 q12 -10 24 0 q12 -10 24 0"/>
+                </g>
+                <g fill="#115e59" opacity="0.7">
+                  <ellipse cx="260" cy="520" rx="170" ry="28"/>
+                  <ellipse cx="1340" cy="540" rx="190" ry="24"/>
+                </g>
+              </svg>
+              <div class="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/45 to-transparent"></div>
+              <div class="absolute inset-x-0 bottom-0 p-5 text-white sm:p-8 lg:p-10">
+                <span class="inline-block rounded-full bg-amber-400 px-3 py-1 text-xs font-bold uppercase tracking-wide text-slate-900">Baía de Todos-os-Santos</span>
+                <h2 class="mt-3 text-2xl font-bold sm:text-3xl">Ilhas da Baía em escuna</h2>
+                <p class="mt-2 max-w-xl text-sm text-stone-200 sm:text-base">Navegação de um dia pelas ilhas de Itaparica e dos Frades, com almoço incluído.</p>
               </div>
             </div>
           </div>
 
-          <button type="button" id="botaoAnterior" class="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-white/20 p-3 text-white backdrop-blur transition hover:bg-white/40" aria-label="Slide anterior">
+          <button type="button" id="botaoAnterior" class="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-white/20 p-3 text-white backdrop-blur transition hover:bg-white/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400" aria-label="Slide anterior">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
             </svg>
           </button>
-          <button type="button" id="botaoProximo" class="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-white/20 p-3 text-white backdrop-blur transition hover:bg-white/40" aria-label="Próximo slide">
+          <button type="button" id="botaoProximo" class="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-white/20 p-3 text-white backdrop-blur transition hover:bg-white/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400" aria-label="Próximo slide">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
             </svg>
           </button>
-        </div>
+        </section>
 
         <div id="indicadoresCarrossel" class="mt-4 flex justify-center gap-2">
-          <button type="button" class="h-3 w-8 rounded-full bg-emerald-500 transition-all" data-indice="0" aria-label="Ir para o slide 1" aria-current="true"></button>
-          <button type="button" class="h-3 w-3 rounded-full bg-slate-300 transition-all" data-indice="1" aria-label="Ir para o slide 2"></button>
-          <button type="button" class="h-3 w-3 rounded-full bg-slate-300 transition-all" data-indice="2" aria-label="Ir para o slide 3"></button>
+          <button type="button" class="h-2.5 w-8 rounded-full bg-orange-700 transition-all duration-300" data-indicador="0" aria-label="Ir para o slide 1: Pelourinho ao entardecer" aria-current="true"></button>
+          <button type="button" class="h-2.5 w-2.5 rounded-full bg-stone-300 transition-all duration-300 hover:bg-stone-400" data-indicador="1" aria-label="Ir para o slide 2: Farol da Barra e pôr do sol"></button>
+          <button type="button" class="h-2.5 w-2.5 rounded-full bg-stone-300 transition-all duration-300 hover:bg-stone-400" data-indicador="2" aria-label="Ir para o slide 3: Ilhas da Baía em escuna"></button>
         </div>
       </div>
     </section>
 
-    <section id="academias" class="scroll-mt-20 bg-white py-12 lg:py-16" aria-labelledby="titulo-academias">
-      <div class="mx-auto max-w-6xl px-4">
+    <section id="passeios" class="scroll-mt-20 bg-white py-12 lg:py-16" aria-labelledby="tituloPasseios">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
         <div class="mb-8 text-center">
-          <h2 id="titulo-academias" class="text-3xl font-bold text-slate-900">Nossas academias</h2>
-          <p class="mt-2 text-slate-600">Três unidades em Salvador com estrutura completa para o seu treino.</p>
+          <h2 id="tituloPasseios" class="text-3xl font-bold text-slate-900">Passeios em destaque</h2>
+          <p class="mt-2 text-stone-600">Três roteiros para conhecer Salvador com guias locais.</p>
         </div>
 
         <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          <article class="flex h-full flex-col overflow-hidden rounded-2xl bg-slate-50 shadow-md">
-            <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&amp;fit=crop&amp;w=800&amp;q=80" class="h-48 w-full object-cover" alt="Atleta treinando com pesos na unidade Barra" loading="lazy">
-            <div class="flex flex-grow flex-col gap-3 p-6">
-              <h3 class="text-xl font-bold text-slate-900">Unidade Barra</h3>
-              <p class="flex-grow text-slate-600">Musculação, cardio e área de peso livre na orla da Barra, com vista para o mar.</p>
-              <button type="button" class="rounded-lg bg-emerald-600 px-4 py-2 font-semibold text-white transition hover:bg-emerald-700" data-academia-nome="Unidade Barra" data-academia-descricao="Estrutura completa de musculação e cardio a poucos metros do Farol da Barra, com horários estendidos durante a semana." data-academia-endereco="Avenida Oceânica, 1200 - Barra" data-academia-horario="Segunda a sexta, 5h às 23h. Sábado e domingo, 7h às 15h.">Ver detalhes</button>
-            </div>
+          <article class="flex h-full flex-col rounded-2xl border-t-4 border-amber-400 bg-stone-50 p-6 shadow-sm">
+            <p class="text-xs font-bold uppercase tracking-widest text-teal-700">Centro histórico</p>
+            <h3 class="mt-2 text-xl font-bold text-slate-900">Pelourinho Histórico</h3>
+            <p class="mt-3 flex-grow text-stone-600">Caminhada guiada por praças, igrejas barrocas e casarões coloniais, com paradas para fotos e histórias dos guias locais.</p>
+            <dl class="mt-5 space-y-2 border-t border-stone-200 pt-4 text-sm">
+              <div class="flex justify-between gap-4">
+                <dt class="text-stone-500">Duração</dt>
+                <dd class="font-medium text-slate-900">3 horas</dd>
+              </div>
+              <div class="flex justify-between gap-4">
+                <dt class="text-stone-500">Valor</dt>
+                <dd class="font-bold text-slate-900">R$ 90 por pessoa</dd>
+              </div>
+            </dl>
+            <button type="button" class="botao-detalhes mt-5 w-full rounded-lg bg-orange-700 px-4 py-2.5 font-semibold text-white transition hover:bg-orange-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-700 focus-visible:ring-offset-2" data-passeio-nome="Pelourinho Histórico" data-passeio-valor="pelourinho" data-passeio-descricao="Um percurso a pé pelo coração de Salvador, começando na Praça da Sé e terminando no Largo do Santo Antônio Além do Carmo. O roteiro inclui a Igreja de São Francisco, o Largo do Pelourinho e mirantes do centro histórico." data-passeio-duracao="3 horas" data-passeio-encontro="Praça da Sé, em frente à Catedral Basílica" data-passeio-inclui="Guia credenciado, entrada na Igreja de São Francisco e água mineral" data-passeio-preco="R$ 90 por pessoa">Ver detalhes</button>
           </article>
 
-          <article class="flex h-full flex-col overflow-hidden rounded-2xl bg-slate-50 shadow-md">
-            <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&amp;fit=crop&amp;w=800&amp;q=80" class="h-48 w-full object-cover" alt="Aula coletiva de ginástica na unidade Rio Vermelho" loading="lazy">
-            <div class="flex flex-grow flex-col gap-3 p-6">
-              <h3 class="text-xl font-bold text-slate-900">Unidade Rio Vermelho</h3>
-              <p class="flex-grow text-slate-600">Aulas de dança, ginástica e funcional em um espaço amplo e climatizado no Rio Vermelho.</p>
-              <button type="button" class="rounded-lg bg-emerald-600 px-4 py-2 font-semibold text-white transition hover:bg-emerald-700" data-academia-nome="Unidade Rio Vermelho" data-academia-descricao="Espaço dedicado a aulas coletivas, com estúdio de dança, sala de ginástica e treino funcional para todos os níveis." data-academia-endereco="Rua da Paciência, 340 - Rio Vermelho" data-academia-horario="Segunda a sexta, 6h às 22h. Sábado, 8h às 14h.">Ver detalhes</button>
-            </div>
+          <article class="flex h-full flex-col rounded-2xl border-t-4 border-amber-400 bg-stone-50 p-6 shadow-sm">
+            <p class="text-xs font-bold uppercase tracking-widest text-teal-700">Orla</p>
+            <h3 class="mt-2 text-xl font-bold text-slate-900">Farol da Barra</h3>
+            <p class="mt-3 flex-grow text-stone-600">Passeio pela orla com visita ao Forte de Santo Antônio da Barra e vista panorâmica para a Baía de Todos-os-Santos.</p>
+            <dl class="mt-5 space-y-2 border-t border-stone-200 pt-4 text-sm">
+              <div class="flex justify-between gap-4">
+                <dt class="text-stone-500">Duração</dt>
+                <dd class="font-medium text-slate-900">2 horas e 30 minutos</dd>
+              </div>
+              <div class="flex justify-between gap-4">
+                <dt class="text-stone-500">Valor</dt>
+                <dd class="font-bold text-slate-900">R$ 70 por pessoa</dd>
+              </div>
+            </dl>
+            <button type="button" class="botao-detalhes mt-5 w-full rounded-lg bg-orange-700 px-4 py-2.5 font-semibold text-white transition hover:bg-orange-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-700 focus-visible:ring-offset-2" data-passeio-nome="Farol da Barra" data-passeio-valor="farol" data-passeio-descricao="Caminhada pela orla da Barra com parada no Forte de Santo Antônio da Barra, onde funciona o Museu Náutico. O guia apresenta a história do farol e o pôr do sol na baía." data-passeio-duracao="2 horas e 30 minutos" data-passeio-encontro="Portão do Forte de Santo Antônio da Barra" data-passeio-inclui="Guia credenciado e ingresso do Museu Náutico" data-passeio-preco="R$ 70 por pessoa">Ver detalhes</button>
           </article>
 
-          <article class="flex h-full flex-col overflow-hidden rounded-2xl bg-slate-50 shadow-md">
-            <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&amp;fit=crop&amp;w=800&amp;q=80" class="h-48 w-full object-cover" alt="Treino com personal trainer na unidade Pituba" loading="lazy">
-            <div class="flex flex-grow flex-col gap-3 p-6">
-              <h3 class="text-xl font-bold text-slate-900">Unidade Pituba</h3>
-              <p class="flex-grow text-slate-600">Personal trainers e avaliação física em uma unidade moderna próxima à Avenida Tancredo Neves.</p>
-              <button type="button" class="rounded-lg bg-emerald-600 px-4 py-2 font-semibold text-white transition hover:bg-emerald-700" data-academia-nome="Unidade Pituba" data-academia-descricao="Unidade moderna com acompanhamento de personal trainers, avaliação física e programas de treino personalizados." data-academia-endereco="Avenida Tancredo Neves, 850 - Pituba" data-academia-horario="Segunda a sexta, 5h30 às 22h30. Sábado, 7h às 13h.">Ver detalhes</button>
-            </div>
+          <article class="flex h-full flex-col rounded-2xl border-t-4 border-amber-400 bg-stone-50 p-6 shadow-sm">
+            <p class="text-xs font-bold uppercase tracking-widest text-teal-700">Baía de Todos-os-Santos</p>
+            <h3 class="mt-2 text-xl font-bold text-slate-900">Ilhas da Baía</h3>
+            <p class="mt-3 flex-grow text-stone-600">Navegação de um dia em escuna pelas ilhas de Itaparica e dos Frades, com paradas para banho e almoço.</p>
+            <dl class="mt-5 space-y-2 border-t border-stone-200 pt-4 text-sm">
+              <div class="flex justify-between gap-4">
+                <dt class="text-stone-500">Duração</dt>
+                <dd class="font-medium text-slate-900">8 horas</dd>
+              </div>
+              <div class="flex justify-between gap-4">
+                <dt class="text-stone-500">Valor</dt>
+                <dd class="font-bold text-slate-900">R$ 220 por pessoa</dd>
+              </div>
+            </dl>
+            <button type="button" class="botao-detalhes mt-5 w-full rounded-lg bg-orange-700 px-4 py-2.5 font-semibold text-white transition hover:bg-orange-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-700 focus-visible:ring-offset-2" data-passeio-nome="Ilhas da Baía" data-passeio-valor="ilhas" data-passeio-descricao="Saída da Marina da Penha em escuna com paradas para banho nas ilhas de Itaparica e dos Frades. O passeio inclui almoço, música ao vivo e retorno no fim da tarde." data-passeio-duracao="8 horas" data-passeio-encontro="Marina da Penha, entrada principal" data-passeio-inclui="Transporte marítimo, almoço, guia e colete salva-vidas" data-passeio-preco="R$ 220 por pessoa">Ver detalhes</button>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="horarios" class="scroll-mt-20 py-12 lg:py-16" aria-labelledby="titulo-horarios">
-      <div class="mx-auto max-w-6xl px-4">
+    <section id="saidas" class="scroll-mt-20 bg-stone-100 py-12 lg:py-16" aria-labelledby="tituloSaidas">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
         <div class="mb-8 text-center">
-          <h2 id="titulo-horarios" class="text-3xl font-bold text-slate-900">Horários e vagas</h2>
-          <p class="mt-2 text-slate-600">Confira as turmas disponíveis e o número de vagas para a próxima semana.</p>
+          <h2 id="tituloSaidas" class="text-3xl font-bold text-slate-900">Saídas e vagas</h2>
+          <p class="mt-2 text-stone-600">Confira as próximas datas, os pontos de encontro e a disponibilidade.</p>
         </div>
 
-        <div class="overflow-x-auto rounded-2xl bg-white shadow-md">
-          <table class="min-w-full text-left">
-            <caption class="px-4 py-3 text-sm text-slate-500">Horários fictícios de aulas nas unidades SalvadorFit.</caption>
-            <thead class="bg-slate-900 text-sm uppercase tracking-wide text-white">
+        <div class="overflow-x-auto rounded-2xl bg-white shadow-sm">
+          <table class="min-w-full text-left text-sm">
+            <caption class="px-4 pt-4 text-left text-sm text-stone-500">Saídas fictícias para a próxima semana. Valores por pessoa.</caption>
+            <thead class="bg-slate-900 text-xs uppercase tracking-wider text-white">
               <tr>
-                <th scope="col" class="px-4 py-3 font-semibold">Unidade</th>
-                <th scope="col" class="px-4 py-3 font-semibold">Modalidade</th>
-                <th scope="col" class="px-4 py-3 font-semibold">Dia</th>
+                <th scope="col" class="px-4 py-3 font-semibold">Passeio</th>
+                <th scope="col" class="px-4 py-3 font-semibold">Dias</th>
                 <th scope="col" class="px-4 py-3 font-semibold">Horário</th>
+                <th scope="col" class="px-4 py-3 font-semibold">Ponto de encontro</th>
                 <th scope="col" class="px-4 py-3 font-semibold">Vagas</th>
+                <th scope="col" class="px-4 py-3 font-semibold">Valor</th>
               </tr>
             </thead>
-            <tbody class="divide-y divide-slate-200">
-              <tr class="even:bg-slate-50">
-                <th scope="row" class="whitespace-nowrap px-4 py-3 font-semibold text-slate-900">Barra</th>
-                <td class="whitespace-nowrap px-4 py-3 text-slate-600">Musculação</td>
-                <td class="whitespace-nowrap px-4 py-3 text-slate-600">Segunda-feira</td>
-                <td class="whitespace-nowrap px-4 py-3 text-slate-600">07h00</td>
-                <td class="whitespace-nowrap px-4 py-3"><span class="rounded-full bg-emerald-100 px-3 py-1 text-sm font-semibold text-emerald-800">12 vagas</span></td>
+            <tbody class="divide-y divide-stone-200">
+              <tr class="transition-colors even:bg-stone-50 hover:bg-amber-50">
+                <th scope="row" class="whitespace-nowrap px-4 py-3 font-semibold text-slate-900">Pelourinho Histórico</th>
+                <td class="whitespace-nowrap px-4 py-3 text-stone-600">Segunda e quarta</td>
+                <td class="whitespace-nowrap px-4 py-3 text-stone-600">09h00</td>
+                <td class="whitespace-nowrap px-4 py-3 text-stone-600">Praça da Sé</td>
+                <td class="whitespace-nowrap px-4 py-3"><span class="rounded-full bg-emerald-100 px-2.5 py-1 text-xs font-semibold text-emerald-800">8 vagas</span></td>
+                <td class="whitespace-nowrap px-4 py-3 text-stone-600">R$ 90</td>
               </tr>
-              <tr class="even:bg-slate-50">
-                <th scope="row" class="whitespace-nowrap px-4 py-3 font-semibold text-slate-900">Rio Vermelho</th>
-                <td class="whitespace-nowrap px-4 py-3 text-slate-600">Ginástica</td>
-                <td class="whitespace-nowrap px-4 py-3 text-slate-600">Terça-feira</td>
-                <td class="whitespace-nowrap px-4 py-3 text-slate-600">18h30</td>
-                <td class="whitespace-nowrap px-4 py-3"><span class="rounded-full bg-amber-100 px-3 py-1 text-sm font-semibold text-amber-800">4 vagas</span></td>
+              <tr class="transition-colors even:bg-stone-50 hover:bg-amber-50">
+                <th scope="row" class="whitespace-nowrap px-4 py-3 font-semibold text-slate-900">Farol da Barra</th>
+                <td class="whitespace-nowrap px-4 py-3 text-stone-600">Terça e quinta</td>
+                <td class="whitespace-nowrap px-4 py-3 text-stone-600">16h30</td>
+                <td class="whitespace-nowrap px-4 py-3 text-stone-600">Forte da Barra</td>
+                <td class="whitespace-nowrap px-4 py-3"><span class="rounded-full bg-amber-100 px-2.5 py-1 text-xs font-semibold text-amber-800">5 vagas</span></td>
+                <td class="whitespace-nowrap px-4 py-3 text-stone-600">R$ 70</td>
               </tr>
-              <tr class="even:bg-slate-50">
-                <th scope="row" class="whitespace-nowrap px-4 py-3 font-semibold text-slate-900">Pituba</th>
-                <td class="whitespace-nowrap px-4 py-3 text-slate-600">Funcional</td>
-                <td class="whitespace-nowrap px-4 py-3 text-slate-600">Quarta-feira</td>
-                <td class="whitespace-nowrap px-4 py-3 text-slate-600">06h00</td>
-                <td class="whitespace-nowrap px-4 py-3"><span class="rounded-full bg-emerald-100 px-3 py-1 text-sm font-semibold text-emerald-800">9 vagas</span></td>
+              <tr class="transition-colors even:bg-stone-50 hover:bg-amber-50">
+                <th scope="row" class="whitespace-nowrap px-4 py-3 font-semibold text-slate-900">Ilhas da Baía</th>
+                <td class="whitespace-nowrap px-4 py-3 text-stone-600">Sexta</td>
+                <td class="whitespace-nowrap px-4 py-3 text-stone-600">08h00</td>
+                <td class="whitespace-nowrap px-4 py-3 text-stone-600">Marina da Penha</td>
+                <td class="whitespace-nowrap px-4 py-3"><span class="rounded-full bg-red-100 px-2.5 py-1 text-xs font-semibold text-red-800">Esgotado</span></td>
+                <td class="whitespace-nowrap px-4 py-3 text-stone-600">R$ 220</td>
               </tr>
-              <tr class="even:bg-slate-50">
-                <th scope="row" class="whitespace-nowrap px-4 py-3 font-semibold text-slate-900">Barra</th>
-                <td class="whitespace-nowrap px-4 py-3 text-slate-600">Spinning</td>
-                <td class="whitespace-nowrap px-4 py-3 text-slate-600">Quinta-feira</td>
-                <td class="whitespace-nowrap px-4 py-3 text-slate-600">19h00</td>
-                <td class="whitespace-nowrap px-4 py-3"><span class="rounded-full bg-red-100 px-3 py-1 text-sm font-semibold text-red-800">Esgotado</span></td>
+              <tr class="transition-colors even:bg-stone-50 hover:bg-amber-50">
+                <th scope="row" class="whitespace-nowrap px-4 py-3 font-semibold text-slate-900">Mercado Modelo e Bonfim</th>
+                <td class="whitespace-nowrap px-4 py-3 text-stone-600">Sábado</td>
+                <td class="whitespace-nowrap px-4 py-3 text-stone-600">10h00</td>
+                <td class="whitespace-nowrap px-4 py-3 text-stone-600">Mercado Modelo</td>
+                <td class="whitespace-nowrap px-4 py-3"><span class="rounded-full bg-emerald-100 px-2.5 py-1 text-xs font-semibold text-emerald-800">12 vagas</span></td>
+                <td class="whitespace-nowrap px-4 py-3 text-stone-600">R$ 80</td>
               </tr>
-              <tr class="even:bg-slate-50">
-                <th scope="row" class="whitespace-nowrap px-4 py-3 font-semibold text-slate-900">Rio Vermelho</th>
-                <td class="whitespace-nowrap px-4 py-3 text-slate-600">Dança</td>
-                <td class="whitespace-nowrap px-4 py-3 text-slate-600">Sexta-feira</td>
-                <td class="whitespace-nowrap px-4 py-3 text-slate-600">17h30</td>
-                <td class="whitespace-nowrap px-4 py-3"><span class="rounded-full bg-emerald-100 px-3 py-1 text-sm font-semibold text-emerald-800">15 vagas</span></td>
+              <tr class="transition-colors even:bg-stone-50 hover:bg-amber-50">
+                <th scope="row" class="whitespace-nowrap px-4 py-3 font-semibold text-slate-900">Pelourinho Histórico</th>
+                <td class="whitespace-nowrap px-4 py-3 text-stone-600">Sábado</td>
+                <td class="whitespace-nowrap px-4 py-3 text-stone-600">15h00</td>
+                <td class="whitespace-nowrap px-4 py-3 text-stone-600">Praça da Sé</td>
+                <td class="whitespace-nowrap px-4 py-3"><span class="rounded-full bg-amber-100 px-2.5 py-1 text-xs font-semibold text-amber-800">3 vagas</span></td>
+                <td class="whitespace-nowrap px-4 py-3 text-stone-600">R$ 90</td>
               </tr>
-              <tr class="even:bg-slate-50">
-                <th scope="row" class="whitespace-nowrap px-4 py-3 font-semibold text-slate-900">Pituba</th>
-                <td class="whitespace-nowrap px-4 py-3 text-slate-600">Personal Trainer</td>
-                <td class="whitespace-nowrap px-4 py-3 text-slate-600">Sábado</td>
-                <td class="whitespace-nowrap px-4 py-3 text-slate-600">09h00</td>
-                <td class="whitespace-nowrap px-4 py-3"><span class="rounded-full bg-amber-100 px-3 py-1 text-sm font-semibold text-amber-800">2 vagas</span></td>
+              <tr class="transition-colors even:bg-stone-50 hover:bg-amber-50">
+                <th scope="row" class="whitespace-nowrap px-4 py-3 font-semibold text-slate-900">Farol da Barra</th>
+                <td class="whitespace-nowrap px-4 py-3 text-stone-600">Domingo</td>
+                <td class="whitespace-nowrap px-4 py-3 text-stone-600">16h00</td>
+                <td class="whitespace-nowrap px-4 py-3 text-stone-600">Forte da Barra</td>
+                <td class="whitespace-nowrap px-4 py-3"><span class="rounded-full bg-emerald-100 px-2.5 py-1 text-xs font-semibold text-emerald-800">10 vagas</span></td>
+                <td class="whitespace-nowrap px-4 py-3 text-stone-600">R$ 70</td>
               </tr>
             </tbody>
           </table>
@@ -201,107 +388,116 @@
       </div>
     </section>
 
-    <section id="reservar" class="scroll-mt-20 bg-white py-12 lg:py-16" aria-labelledby="titulo-reservar">
-      <div class="mx-auto max-w-6xl px-4">
-        <div class="mx-auto max-w-3xl rounded-2xl bg-slate-50 p-6 shadow-md md:p-10">
+    <section id="reservar" class="scroll-mt-20 bg-white py-12 lg:py-16" aria-labelledby="tituloReservar">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="mx-auto max-w-3xl rounded-3xl bg-stone-100 p-6 shadow-sm md:p-10">
           <div class="mb-6 text-center">
-            <h2 id="titulo-reservar" class="text-3xl font-bold text-slate-900">Reserve sua aula experimental</h2>
-            <p class="mt-2 text-slate-600">Preencha os dados abaixo e nossa equipe confirmará sua reserva.</p>
+            <h2 id="tituloReservar" class="text-3xl font-bold text-slate-900">Reserve seu passeio</h2>
+            <p class="mt-2 text-stone-600">Preencha os dados e nossa equipe confirmará a disponibilidade por e-mail.</p>
           </div>
 
-          <div id="mensagemSucesso" class="mb-4 hidden rounded-lg border border-emerald-300 bg-emerald-50 px-4 py-3 text-emerald-800" role="status" aria-live="polite">
-            Reserva enviada com sucesso! Entraremos em contato para confirmar o horário.
+          <div id="mensagemSucesso" class="mb-5 hidden rounded-xl border border-emerald-300 bg-emerald-50 px-4 py-3 text-sm font-medium text-emerald-900" role="status" aria-live="polite">
+            Solicitação enviada! Nossa equipe confirmará a disponibilidade do passeio escolhido.
           </div>
 
-          <form id="formularioReserva" class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <form id="formularioReserva" class="grid grid-cols-1 gap-4 sm:grid-cols-2" novalidate>
             <div>
-              <label for="nome" class="mb-1 block text-sm font-medium text-slate-700">Nome completo</label>
-              <input type="text" class="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500" id="nome" name="nome" placeholder="Seu nome" required>
+              <label for="nome" class="block text-sm font-medium text-stone-700">Nome completo</label>
+              <input type="text" class="mt-1 block w-full rounded-lg border border-stone-300 bg-white px-3 py-2.5 text-stone-900 shadow-sm focus:border-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-700/30" id="nome" name="nome" autocomplete="name" placeholder="Seu nome" required>
             </div>
             <div>
-              <label for="email" class="mb-1 block text-sm font-medium text-slate-700">E-mail</label>
-              <input type="email" class="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500" id="email" name="email" placeholder="voce@exemplo.com" required>
+              <label for="email" class="block text-sm font-medium text-stone-700">E-mail</label>
+              <input type="email" class="mt-1 block w-full rounded-lg border border-stone-300 bg-white px-3 py-2.5 text-stone-900 shadow-sm focus:border-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-700/30" id="email" name="email" autocomplete="email" placeholder="voce@exemplo.com" required>
             </div>
             <div>
-              <label for="telefone" class="mb-1 block text-sm font-medium text-slate-700">Telefone</label>
-              <input type="tel" class="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500" id="telefone" name="telefone" placeholder="(71) 90000-0000" pattern="\([0-9]{2}\) [0-9]{4,5}-[0-9]{4}" required>
+              <label for="telefone" class="block text-sm font-medium text-stone-700">Telefone</label>
+              <input type="tel" class="mt-1 block w-full rounded-lg border border-stone-300 bg-white px-3 py-2.5 text-stone-900 shadow-sm focus:border-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-700/30" id="telefone" name="telefone" autocomplete="tel" placeholder="(71) 90000-0000" pattern="\([0-9]{2}\) [0-9]{4,5}-[0-9]{4}" aria-describedby="ajudaTelefone" required>
+              <p id="ajudaTelefone" class="mt-1 text-xs text-stone-500">Formato: (71) 90000-0000</p>
             </div>
             <div>
-              <label for="unidade" class="mb-1 block text-sm font-medium text-slate-700">Unidade</label>
-              <select class="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500" id="unidade" name="unidade" required>
-                <option value="" selected disabled>Escolha uma unidade</option>
-                <option value="barra">Barra</option>
-                <option value="rio-vermelho">Rio Vermelho</option>
-                <option value="pituba">Pituba</option>
+              <label for="passeio" class="block text-sm font-medium text-stone-700">Passeio</label>
+              <select class="mt-1 block w-full rounded-lg border border-stone-300 bg-white px-3 py-2.5 text-stone-900 shadow-sm focus:border-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-700/30" id="passeio" name="passeio" required>
+                <option value="" selected disabled>Escolha um passeio</option>
+                <option value="pelourinho">Pelourinho Histórico</option>
+                <option value="farol">Farol da Barra</option>
+                <option value="ilhas">Ilhas da Baía</option>
+                <option value="mercado">Mercado Modelo e Bonfim</option>
               </select>
             </div>
             <div>
-              <label for="data" class="mb-1 block text-sm font-medium text-slate-700">Data desejada</label>
-              <input type="date" class="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500" id="data" name="data" required>
+              <label for="data" class="block text-sm font-medium text-stone-700">Data desejada</label>
+              <input type="date" class="mt-1 block w-full rounded-lg border border-stone-300 bg-white px-3 py-2.5 text-stone-900 shadow-sm focus:border-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-700/30" id="data" name="data" required>
             </div>
             <div>
-              <label for="modalidade" class="mb-1 block text-sm font-medium text-slate-700">Modalidade</label>
-              <select class="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500" id="modalidade" name="modalidade" required>
-                <option value="" selected disabled>Escolha uma modalidade</option>
-                <option value="musculacao">Musculação</option>
-                <option value="ginastica">Ginástica</option>
-                <option value="funcional">Funcional</option>
-                <option value="spinning">Spinning</option>
-                <option value="danca">Dança</option>
-              </select>
+              <label for="quantidade" class="block text-sm font-medium text-stone-700">Quantidade de pessoas</label>
+              <input type="number" class="mt-1 block w-full rounded-lg border border-stone-300 bg-white px-3 py-2.5 text-stone-900 shadow-sm focus:border-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-700/30" id="quantidade" name="quantidade" min="1" max="10" placeholder="2" required>
             </div>
             <div class="sm:col-span-2">
-              <label for="mensagem" class="mb-1 block text-sm font-medium text-slate-700">Mensagem</label>
-              <textarea class="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500" id="mensagem" name="mensagem" rows="3" placeholder="Conte-nos sobre seu objetivo de treino"></textarea>
+              <label for="observacoes" class="block text-sm font-medium text-stone-700">Observações</label>
+              <textarea class="mt-1 block w-full rounded-lg border border-stone-300 bg-white px-3 py-2.5 text-stone-900 shadow-sm focus:border-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-700/30" id="observacoes" name="observacoes" rows="3" placeholder="Conte-nos sobre necessidades de acessibilidade, crianças ou outros detalhes"></textarea>
             </div>
             <div class="flex justify-end sm:col-span-2">
-              <button type="submit" class="w-full rounded-lg bg-emerald-600 px-6 py-3 font-semibold text-white transition hover:bg-emerald-700 sm:w-auto">Enviar reserva</button>
+              <button type="submit" class="w-full rounded-lg bg-orange-700 px-6 py-3 font-semibold text-white transition hover:bg-orange-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-700 focus-visible:ring-offset-2 sm:w-auto">Solicitar reserva</button>
             </div>
           </form>
         </div>
       </div>
     </section>
-
   </main>
 
-  <footer class="bg-slate-900 py-8 text-slate-400">
-    <div class="mx-auto flex max-w-6xl flex-col gap-4 px-4 md:flex-row md:items-center md:justify-between">
-      <div>
-        <p class="font-bold text-white">SalvadorFit</p>
-        <p class="mt-1 text-sm">Reservas de academia em Salvador, BA. Conteúdo fictício para fins educacionais.</p>
+  <footer class="bg-slate-900 py-10 text-slate-300">
+    <div class="mx-auto flex max-w-6xl flex-col gap-6 px-4 sm:px-6 md:flex-row md:items-start md:justify-between">
+      <div class="md:max-w-md">
+        <p class="text-xl font-bold text-white">Rota do <span class="text-amber-400">Dendê</span></p>
+        <p class="mt-2 text-sm text-slate-400">Passeios guiados por Salvador, BA. Conteúdo fictício criado para fins educacionais.</p>
       </div>
-      <div class="text-sm md:text-right">
-        <p>Av. Oceânica, 1200 - Barra, Salvador - BA</p>
-        <p class="mt-1">contato@salvadorfit.example</p>
+      <div class="text-sm">
+        <h2 class="text-xs font-bold uppercase tracking-widest text-amber-400">Contato</h2>
+        <address class="mt-2 not-italic text-slate-400">
+          Rua do Passo, 12 - Santo Antônio<br>
+          Salvador - BA<br>
+          <a class="transition hover:text-amber-400" href="mailto:contato@rotadodende.example">contato@rotadodende.example</a><br>
+          <a class="transition hover:text-amber-400" href="tel:+557190000000">(71)&nbsp;90000&#8209;0000</a>
+        </address>
       </div>
     </div>
   </footer>
 
-  <div id="modalAcademia" class="fixed inset-0 z-50 hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="modalAcademiaTitulo">
-    <div id="fundoModal" class="absolute inset-0 bg-slate-950/60"></div>
-    <div class="relative w-full max-w-lg rounded-2xl bg-white p-6 shadow-2xl">
-      <div class="mb-4 flex items-start justify-between gap-4">
-        <h2 id="modalAcademiaTitulo" class="text-xl font-bold text-slate-900">Detalhes da academia</h2>
-        <button type="button" class="rounded-lg p-1 text-slate-500 hover:bg-slate-100 hover:text-slate-900" data-fechar-modal aria-label="Fechar modal">
+  <div id="modalPasseio" class="fixed inset-0 z-50 hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="tituloModalPasseio" aria-describedby="descricaoModalPasseio">
+    <div id="fundoModalPasseio" class="absolute inset-0 bg-slate-950/70"></div>
+    <div class="relative w-full max-w-lg overflow-hidden rounded-2xl bg-white shadow-2xl">
+      <div class="flex items-start justify-between gap-4 bg-slate-900 p-5 text-white">
+        <h2 id="tituloModalPasseio" class="text-xl font-bold">Detalhes do passeio</h2>
+        <button type="button" class="rounded-lg p-1 text-slate-300 hover:bg-slate-800 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400" data-fechar-modal aria-label="Fechar detalhes do passeio">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
           </svg>
         </button>
       </div>
-      <p id="modalAcademiaDescricao" class="mb-4 text-slate-600"></p>
-      <dl class="space-y-2 text-sm">
-        <div class="flex gap-2">
-          <dt class="font-semibold text-slate-900">Endereço:</dt>
-          <dd id="modalAcademiaEndereco" class="text-slate-600"></dd>
-        </div>
-        <div class="flex gap-2">
-          <dt class="font-semibold text-slate-900">Horário:</dt>
-          <dd id="modalAcademiaHorario" class="text-slate-600"></dd>
-        </div>
-      </dl>
-      <div class="mt-6 flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
-        <button type="button" class="rounded-lg border border-slate-300 px-4 py-2 font-semibold text-slate-700 transition hover:bg-slate-100" data-fechar-modal>Fechar</button>
-        <a href="#reservar" class="rounded-lg bg-emerald-600 px-4 py-2 text-center font-semibold text-white transition hover:bg-emerald-700" data-fechar-modal>Reservar agora</a>
+      <div class="p-5 sm:p-6">
+        <p id="descricaoModalPasseio" class="text-stone-600"></p>
+        <dl class="mt-4 space-y-2 text-sm">
+          <div class="flex gap-2">
+            <dt class="w-28 shrink-0 font-semibold text-slate-900 sm:w-32">Duração</dt>
+            <dd id="duracaoModalPasseio" class="text-stone-600"></dd>
+          </div>
+          <div class="flex gap-2">
+            <dt class="w-28 shrink-0 font-semibold text-slate-900 sm:w-32">Ponto de encontro</dt>
+            <dd id="encontroModalPasseio" class="text-stone-600"></dd>
+          </div>
+          <div class="flex gap-2">
+            <dt class="w-28 shrink-0 font-semibold text-slate-900 sm:w-32">Inclui</dt>
+            <dd id="incluiModalPasseio" class="text-stone-600"></dd>
+          </div>
+          <div class="flex gap-2">
+            <dt class="w-28 shrink-0 font-semibold text-slate-900 sm:w-32">Valor</dt>
+            <dd id="precoModalPasseio" class="font-semibold text-slate-900"></dd>
+          </div>
+        </dl>
+      </div>
+      <div class="flex flex-col-reverse gap-3 border-t border-stone-200 p-5 sm:flex-row sm:justify-end">
+        <button type="button" class="rounded-lg border border-stone-300 px-4 py-2 font-semibold text-stone-700 transition hover:bg-stone-100" data-fechar-modal>Fechar</button>
+        <button type="button" id="botaoReservarPasseio" class="rounded-lg bg-orange-700 px-4 py-2 font-semibold text-white transition hover:bg-orange-800">Reservar este passeio</button>
       </div>
     </div>
   </div>
@@ -309,6 +505,12 @@
   <script>
     const botaoMenu = document.getElementById('botaoMenu');
     const menuMobile = document.getElementById('menuMobile');
+
+    function fecharMenu() {
+      menuMobile.classList.add('hidden');
+      botaoMenu.setAttribute('aria-expanded', 'false');
+      botaoMenu.setAttribute('aria-label', 'Abrir menu de navegação');
+    }
 
     botaoMenu.addEventListener('click', function () {
       const menuAberto = !menuMobile.classList.contains('hidden');
@@ -318,27 +520,29 @@
     });
 
     document.querySelectorAll('#menuMobile a').forEach(function (link) {
-      link.addEventListener('click', function () {
-        menuMobile.classList.add('hidden');
-        botaoMenu.setAttribute('aria-expanded', 'false');
-        botaoMenu.setAttribute('aria-label', 'Abrir menu de navegação');
-      });
+      link.addEventListener('click', fecharMenu);
+    });
+
+    document.addEventListener('keydown', function (evento) {
+      if (evento.key === 'Escape' && !menuMobile.classList.contains('hidden')) {
+        fecharMenu();
+      }
     });
 
     const trilhaCarrossel = document.getElementById('trilhaCarrossel');
-    const indicadores = document.querySelectorAll('#indicadoresCarrossel button');
+    const indicadoresCarrossel = document.querySelectorAll('[data-indicador]');
     const totalSlides = 3;
     let slideAtual = 0;
 
     function mostrarSlide(indice) {
       slideAtual = (indice + totalSlides) % totalSlides;
       trilhaCarrossel.style.transform = 'translateX(-' + (slideAtual * 100) + '%)';
-      indicadores.forEach(function (indicador, posicao) {
+      indicadoresCarrossel.forEach(function (indicador, posicao) {
         const ativo = posicao === slideAtual;
         indicador.classList.toggle('w-8', ativo);
-        indicador.classList.toggle('bg-emerald-500', ativo);
-        indicador.classList.toggle('w-3', !ativo);
-        indicador.classList.toggle('bg-slate-300', !ativo);
+        indicador.classList.toggle('bg-orange-700', ativo);
+        indicador.classList.toggle('w-2.5', !ativo);
+        indicador.classList.toggle('bg-stone-300', !ativo);
         if (ativo) {
           indicador.setAttribute('aria-current', 'true');
         } else {
@@ -355,56 +559,70 @@
       mostrarSlide(slideAtual + 1);
     });
 
-    indicadores.forEach(function (indicador) {
+    indicadoresCarrossel.forEach(function (indicador) {
       indicador.addEventListener('click', function () {
-        mostrarSlide(Number(indicador.dataset.indice));
+        mostrarSlide(Number(indicador.dataset.indicador));
       });
     });
 
-    const modalAcademia = document.getElementById('modalAcademia');
-    const fundoModal = document.getElementById('fundoModal');
-    const tituloModal = document.getElementById('modalAcademiaTitulo');
-    const descricaoModal = document.getElementById('modalAcademiaDescricao');
-    const enderecoModal = document.getElementById('modalAcademiaEndereco');
-    const horarioModal = document.getElementById('modalAcademiaHorario');
-    const botaoFecharModal = modalAcademia.querySelector('[data-fechar-modal]');
+    const modalPasseio = document.getElementById('modalPasseio');
+    const fundoModalPasseio = document.getElementById('fundoModalPasseio');
+    const tituloModalPasseio = document.getElementById('tituloModalPasseio');
+    const descricaoModalPasseio = document.getElementById('descricaoModalPasseio');
+    const duracaoModalPasseio = document.getElementById('duracaoModalPasseio');
+    const encontroModalPasseio = document.getElementById('encontroModalPasseio');
+    const incluiModalPasseio = document.getElementById('incluiModalPasseio');
+    const precoModalPasseio = document.getElementById('precoModalPasseio');
+    const botaoFecharModal = modalPasseio.querySelector('[data-fechar-modal]');
+    let passeioSelecionado = '';
     let elementoFocadoAnterior = null;
 
     function abrirModal(botao) {
-      tituloModal.textContent = botao.dataset.academiaNome;
-      descricaoModal.textContent = botao.dataset.academiaDescricao;
-      enderecoModal.textContent = botao.dataset.academiaEndereco;
-      horarioModal.textContent = botao.dataset.academiaHorario;
+      tituloModalPasseio.textContent = botao.dataset.passeioNome;
+      descricaoModalPasseio.textContent = botao.dataset.passeioDescricao;
+      duracaoModalPasseio.textContent = botao.dataset.passeioDuracao;
+      encontroModalPasseio.textContent = botao.dataset.passeioEncontro;
+      incluiModalPasseio.textContent = botao.dataset.passeioInclui;
+      precoModalPasseio.textContent = botao.dataset.passeioPreco;
+      passeioSelecionado = botao.dataset.passeioValor;
       elementoFocadoAnterior = document.activeElement;
-      modalAcademia.classList.remove('hidden');
-      modalAcademia.classList.add('flex');
+      modalPasseio.classList.remove('hidden');
+      modalPasseio.classList.add('flex');
       botaoFecharModal.focus();
     }
 
     function fecharModal() {
-      modalAcademia.classList.add('hidden');
-      modalAcademia.classList.remove('flex');
+      modalPasseio.classList.add('hidden');
+      modalPasseio.classList.remove('flex');
       if (elementoFocadoAnterior) {
         elementoFocadoAnterior.focus();
       }
     }
 
-    document.querySelectorAll('[data-academia-nome]').forEach(function (botao) {
+    document.querySelectorAll('.botao-detalhes').forEach(function (botao) {
       botao.addEventListener('click', function () {
         abrirModal(botao);
       });
     });
 
-    modalAcademia.querySelectorAll('[data-fechar-modal]').forEach(function (elemento) {
+    modalPasseio.querySelectorAll('[data-fechar-modal]').forEach(function (elemento) {
       elemento.addEventListener('click', fecharModal);
     });
 
-    fundoModal.addEventListener('click', fecharModal);
+    fundoModalPasseio.addEventListener('click', fecharModal);
 
     document.addEventListener('keydown', function (evento) {
-      if (evento.key === 'Escape' && !modalAcademia.classList.contains('hidden')) {
+      if (evento.key === 'Escape' && !modalPasseio.classList.contains('hidden')) {
         fecharModal();
       }
+    });
+
+    document.getElementById('botaoReservarPasseio').addEventListener('click', function () {
+      const selectPasseio = document.getElementById('passeio');
+      selectPasseio.value = passeioSelecionado;
+      fecharModal();
+      document.getElementById('reservar').scrollIntoView({ behavior: 'smooth' });
+      selectPasseio.focus({ preventScroll: true });
     });
 
     const formularioReserva = document.getElementById('formularioReserva');
@@ -412,6 +630,10 @@
 
     formularioReserva.addEventListener('submit', function (evento) {
       evento.preventDefault();
+      if (!formularioReserva.checkValidity()) {
+        formularioReserva.reportValidity();
+        return;
+      }
       mensagemSucesso.classList.remove('hidden');
       formularioReserva.reset();
       mensagemSucesso.scrollIntoView({ behavior: 'smooth', block: 'center' });

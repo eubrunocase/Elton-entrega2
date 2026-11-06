@@ -3,18 +3,109 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="SalvadorFit: reserve seu treino nas academias de Salvador, BA.">
-  <title>SalvadorFit | Reservas de academia em Salvador</title>
+  <meta name="description" content="Rota do Dendê: reservas de passeios guiados em Salvador, BA.">
+  <title>Rota do Dendê | Passeios guiados em Salvador</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body class="bg-body-tertiary">
+  <style>
+    :root {
+      --cor-marinho: #0f172a;
+      --cor-teal: #0f766e;
+      --cor-ambar: #fbbf24;
+      --cor-coral: #c2410c;
+      --cor-areia: #f5f5f4;
+    }
 
+    body {
+      background-color: var(--cor-areia);
+      color: #1c1917;
+    }
+
+    .bg-marinho {
+      background-color: var(--cor-marinho) !important;
+    }
+
+    .text-ambar {
+      color: var(--cor-ambar) !important;
+    }
+
+    .text-teal {
+      color: var(--cor-teal) !important;
+    }
+
+    .btn-coral {
+      --bs-btn-color: #fff;
+      --bs-btn-bg: var(--cor-coral);
+      --bs-btn-border-color: var(--cor-coral);
+      --bs-btn-hover-color: #fff;
+      --bs-btn-hover-bg: #9a3412;
+      --bs-btn-hover-border-color: #9a3412;
+      --bs-btn-focus-shadow-rgb: 194, 65, 12;
+      --bs-btn-active-color: #fff;
+      --bs-btn-active-bg: #7c2d12;
+      --bs-btn-active-border-color: #7c2d12;
+    }
+
+    .btn-outline-marinho {
+      --bs-btn-color: var(--cor-marinho);
+      --bs-btn-border-color: var(--cor-marinho);
+      --bs-btn-hover-color: #fff;
+      --bs-btn-hover-bg: var(--cor-marinho);
+      --bs-btn-hover-border-color: var(--cor-marinho);
+    }
+
+    .faixa-card {
+      border-top: 4px solid var(--cor-ambar);
+    }
+
+    .arte-slide {
+      height: clamp(320px, 48vw, 530px);
+    }
+
+    .legenda-slide {
+      left: 1rem;
+      right: 1rem;
+      bottom: 1rem;
+      padding: 1.25rem;
+      background: rgba(15, 23, 42, 0.82);
+      border-radius: 1rem;
+      text-align: left;
+    }
+
+    .tabela-marinho thead th {
+      background-color: var(--cor-marinho);
+      color: #fff;
+      border-color: var(--cor-marinho);
+    }
+
+    .link-rodape {
+      color: #cbd5e1;
+      text-decoration: none;
+    }
+
+    .link-rodape:hover {
+      color: var(--cor-ambar);
+    }
+
+    section[id] {
+      scroll-margin-top: 5rem;
+    }
+
+    @media (min-width: 768px) {
+      .legenda-slide {
+        left: 2.5rem;
+        right: auto;
+        bottom: 2.5rem;
+        width: 34rem;
+        padding: 1.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm" aria-label="Navegação principal">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-marinho shadow-sm sticky-top" aria-label="Navegação principal">
       <div class="container">
-        <a class="navbar-brand fw-bold" href="#inicio">
-          Salvador<span class="text-success">Fit</span>
-        </a>
+        <a class="navbar-brand fw-bold fs-4" href="#inicio">Rota do <span class="text-ambar">Dendê</span></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menu de navegação">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -24,10 +115,10 @@
               <a class="nav-link active" aria-current="page" href="#inicio">Início</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#academias">Academias</a>
+              <a class="nav-link" href="#passeios">Passeios</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#horarios">Horários</a>
+              <a class="nav-link" href="#saidas">Saídas</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#reservar">Reservar</a>
@@ -39,94 +130,271 @@
   </header>
 
   <main>
-
-    <section id="inicio" class="py-4 py-lg-5" aria-labelledby="titulo-inicial">
+    <section id="inicio" class="py-4 py-lg-5" aria-labelledby="tituloInicial">
       <div class="container">
         <div class="text-center mb-4">
-          <h1 id="titulo-inicial" class="display-5 fw-bold">Seu treino em Salvador começa aqui</h1>
-          <p class="lead text-secondary mb-0">Conheça nossas unidades na orla e reserve sua aula experimental.</p>
+          <h1 id="tituloInicial" class="display-5 fw-bold">Salvador além do cartão-postal</h1>
+          <p class="lead text-secondary mx-auto mb-0">Passeios guiados pelo centro histórico, pela orla e pelas ilhas da Baía de Todos-os-Santos.</p>
         </div>
 
-        <div id="carrosselAcademias" class="carousel slide shadow rounded-4 overflow-hidden" aria-roledescription="carrossel" aria-label="Destaques das academias SalvadorFit">
+        <section id="carrosselPasseios" class="carousel slide rounded-4 overflow-hidden shadow" aria-roledescription="carrossel" aria-label="Destaques de passeios em Salvador">
           <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carrosselAcademias" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1: Unidade Barra"></button>
-            <button type="button" data-bs-target="#carrosselAcademias" data-bs-slide-to="1" aria-label="Slide 2: Unidade Rio Vermelho"></button>
-            <button type="button" data-bs-target="#carrosselAcademias" data-bs-slide-to="2" aria-label="Slide 3: Unidade Pituba"></button>
+            <button type="button" data-bs-target="#carrosselPasseios" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1: Pelourinho ao entardecer"></button>
+            <button type="button" data-bs-target="#carrosselPasseios" data-bs-slide-to="1" aria-label="Slide 2: Farol da Barra e pôr do sol"></button>
+            <button type="button" data-bs-target="#carrosselPasseios" data-bs-slide-to="2" aria-label="Slide 3: Ilhas da Baía em escuna"></button>
           </div>
 
           <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" class="d-block w-100" style="height: clamp(280px, 50vw, 520px); object-fit: cover;" alt="Sala de musculação com halteres e equipamentos">
-              <div class="carousel-caption text-start pb-4">
-                <h2 class="h3 fw-bold">Unidade Barra</h2>
-                <p class="mb-0">Musculação completa a poucos metros do Farol da Barra.</p>
+            <div class="carousel-item active" role="group" aria-roledescription="slide" aria-label="1 de 3">
+              <svg class="d-block w-100 arte-slide" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ilustração de casarões coloridos do Pelourinho ao entardecer">
+                <defs>
+                  <linearGradient id="ceuPelourinho" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#fde68a"/>
+                    <stop offset="50%" stop-color="#f59e0b"/>
+                    <stop offset="100%" stop-color="#c2410c"/>
+                  </linearGradient>
+                  <linearGradient id="ruaPelourinho" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#57534e"/>
+                    <stop offset="100%" stop-color="#1c1917"/>
+                  </linearGradient>
+                </defs>
+                <rect width="1600" height="900" fill="url(#ceuPelourinho)"/>
+                <circle cx="1240" cy="230" r="120" fill="#fffbeb" opacity="0.9"/>
+                <path d="M0 570 L180 490 L360 550 L540 470 L760 545 L960 465 L1160 540 L1360 470 L1600 550 L1600 900 L0 900 Z" fill="#7c2d12" opacity="0.28"/>
+                <rect y="650" width="1600" height="250" fill="url(#ruaPelourinho)"/>
+                <g>
+                  <rect x="30" y="470" width="240" height="260" fill="#0f766e"/>
+                  <rect x="30" y="448" width="240" height="30" fill="#115e59"/>
+                  <rect x="70" y="515" width="55" height="80" fill="#1c1917"/>
+                  <rect x="175" y="515" width="55" height="80" fill="#1c1917"/>
+                  <path d="M105 730 V680 a45 45 0 0 1 90 0 v50 z" fill="#fbbf24"/>
+                </g>
+                <g>
+                  <rect x="290" y="420" width="260" height="310" fill="#c2410c"/>
+                  <rect x="290" y="396" width="260" height="32" fill="#9a3412"/>
+                  <rect x="330" y="470" width="60" height="85" fill="#1c1917"/>
+                  <rect x="450" y="470" width="60" height="85" fill="#1c1917"/>
+                  <rect x="330" y="590" width="60" height="85" fill="#1c1917"/>
+                  <rect x="450" y="590" width="60" height="85" fill="#1c1917"/>
+                </g>
+                <g>
+                  <rect x="570" y="455" width="230" height="275" fill="#f59e0b"/>
+                  <rect x="570" y="432" width="230" height="30" fill="#b45309"/>
+                  <rect x="610" y="505" width="55" height="80" fill="#1c1917"/>
+                  <rect x="705" y="505" width="55" height="80" fill="#1c1917"/>
+                  <path d="M635 730 V675 a38 38 0 0 1 76 0 v55 z" fill="#0f766e"/>
+                </g>
+                <g>
+                  <rect x="820" y="405" width="270" height="325" fill="#f5f5f4"/>
+                  <rect x="820" y="380" width="270" height="32" fill="#d6d3d1"/>
+                  <rect x="860" y="455" width="60" height="90" fill="#1c1917"/>
+                  <rect x="990" y="455" width="60" height="90" fill="#1c1917"/>
+                  <rect x="860" y="585" width="60" height="90" fill="#1c1917"/>
+                  <rect x="990" y="585" width="60" height="90" fill="#1c1917"/>
+                </g>
+                <g>
+                  <rect x="1110" y="450" width="240" height="280" fill="#2563eb"/>
+                  <rect x="1110" y="426" width="240" height="30" fill="#1e40af"/>
+                  <rect x="1150" y="500" width="55" height="80" fill="#1c1917"/>
+                  <rect x="1255" y="500" width="55" height="80" fill="#1c1917"/>
+                  <path d="M1180 730 V680 a40 40 0 0 1 80 0 v50 z" fill="#fbbf24"/>
+                </g>
+                <g>
+                  <rect x="1370" y="430" width="200" height="300" fill="#0f766e"/>
+                  <rect x="1370" y="406" width="200" height="30" fill="#115e59"/>
+                  <rect x="1405" y="480" width="50" height="75" fill="#1c1917"/>
+                  <rect x="1485" y="480" width="50" height="75" fill="#1c1917"/>
+                  <rect x="1405" y="600" width="50" height="75" fill="#1c1917"/>
+                </g>
+                <g stroke="#fcd34d" stroke-width="4" opacity="0.55">
+                  <path d="M0 760 H1600"/>
+                  <path d="M0 820 H1600"/>
+                  <path d="M0 880 H1600"/>
+                </g>
+                <g stroke="#1c1917" stroke-width="9" stroke-linecap="round">
+                  <path d="M600 860 V760"/>
+                  <path d="M1080 860 V760"/>
+                </g>
+                <g fill="#fbbf24">
+                  <circle cx="600" cy="748" r="14"/>
+                  <circle cx="1080" cy="748" r="14"/>
+                </g>
+              </svg>
+              <div class="carousel-caption legenda-slide">
+                <span class="badge text-bg-warning text-dark mb-2">Centro histórico</span>
+                <h2 class="h3 fw-bold">Pelourinho ao entardecer</h2>
+                <p class="mb-0">Caminhada guiada pelas ladeiras coloridas e pelas igrejas barrocas do centro histórico.</p>
               </div>
             </div>
-            <div class="carousel-item">
-              <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" class="d-block w-100" style="height: clamp(280px, 50vw, 520px); object-fit: cover;" alt="Área ampla de treino com equipamentos modernos">
-              <div class="carousel-caption text-start pb-4">
-                <h2 class="h3 fw-bold">Unidade Rio Vermelho</h2>
-                <p class="mb-0">Aulas coletivas e espaço funcional no coração do bairro.</p>
+
+            <div class="carousel-item" role="group" aria-roledescription="slide" aria-label="2 de 3">
+              <svg class="d-block w-100 arte-slide" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ilustração do Farol da Barra durante o pôr do sol">
+                <defs>
+                  <linearGradient id="ceuFarol" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#0f172a"/>
+                    <stop offset="55%" stop-color="#7c2d12"/>
+                    <stop offset="100%" stop-color="#f59e0b"/>
+                  </linearGradient>
+                  <linearGradient id="marFarol" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#0f766e"/>
+                    <stop offset="100%" stop-color="#0f172a"/>
+                  </linearGradient>
+                </defs>
+                <rect width="1600" height="540" fill="url(#ceuFarol)"/>
+                <circle cx="430" cy="500" r="100" fill="#fbbf24" opacity="0.92"/>
+                <rect y="520" width="1600" height="380" fill="url(#marFarol)"/>
+                <g stroke="#fbbf24" stroke-linecap="round" opacity="0.6">
+                  <path d="M380 620 H480" stroke-width="6"/>
+                  <path d="M340 690 H520" stroke-width="8"/>
+                  <path d="M400 760 H460" stroke-width="5"/>
+                </g>
+                <g transform="translate(1020 250)">
+                  <path d="M85 120 H165 L200 430 H50 Z" fill="#f5f5f4"/>
+                  <path d="M75 205 H175 L185 270 H65 Z" fill="#c2410c"/>
+                  <path d="M60 325 H190 L198 385 H52 Z" fill="#c2410c"/>
+                  <rect x="65" y="80" width="120" height="40" fill="#1c1917"/>
+                  <rect x="90" y="38" width="70" height="42" fill="#fbbf24"/>
+                  <path d="M90 38 L125 0 L160 38 Z" fill="#f5f5f4"/>
+                  <path d="M90 58 L0 22 V86 Z" fill="#fbbf24" opacity="0.28"/>
+                  <path d="M160 58 L250 22 V86 Z" fill="#fbbf24" opacity="0.28"/>
+                  <rect x="118" y="255" width="14" height="40" fill="#1c1917"/>
+                </g>
+                <g>
+                  <rect x="820" y="700" width="780" height="200" fill="#292524"/>
+                  <rect x="820" y="670" width="780" height="30" fill="#44403c"/>
+                  <rect x="860" y="610" width="70" height="60" fill="#44403c"/>
+                  <rect x="970" y="630" width="55" height="40" fill="#44403c"/>
+                  <rect x="1250" y="620" width="80" height="50" fill="#44403c"/>
+                  <rect x="1420" y="640" width="60" height="30" fill="#44403c"/>
+                </g>
+                <g stroke="#0f172a" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.7">
+                  <path d="M760 300 q20 -18 40 0 q20 -18 40 0"/>
+                  <path d="M860 240 q16 -14 32 0 q16 -14 32 0"/>
+                  <path d="M700 220 q14 -12 28 0 q14 -12 28 0"/>
+                </g>
+              </svg>
+              <div class="carousel-caption legenda-slide">
+                <span class="badge text-bg-warning text-dark mb-2">Orla</span>
+                <h2 class="h3 fw-bold">Farol da Barra e pôr do sol</h2>
+                <p class="mb-0">Trilha leve pela orla com parada no forte e vista para a Baía de Todos-os-Santos.</p>
               </div>
             </div>
-            <div class="carousel-item">
-              <img src="https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" class="d-block w-100" style="height: clamp(280px, 50vw, 520px); object-fit: cover;" alt="Pessoa treinando com acompanhamento profissional">
-              <div class="carousel-caption text-start pb-4">
-                <h2 class="h3 fw-bold">Unidade Pituba</h2>
-                <p class="mb-0">Treino personalizado e avaliação física perto da Avenida Tancredo Neves.</p>
+
+            <div class="carousel-item" role="group" aria-roledescription="slide" aria-label="3 de 3">
+              <svg class="d-block w-100 arte-slide" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ilustração de uma escuna navegando pelas ilhas da Baía de Todos-os-Santos">
+                <defs>
+                  <linearGradient id="ceuIlhas" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#bae6fd"/>
+                    <stop offset="60%" stop-color="#fef3c7"/>
+                    <stop offset="100%" stop-color="#fcd34d"/>
+                  </linearGradient>
+                  <linearGradient id="marIlhas" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#0ea5e9"/>
+                    <stop offset="100%" stop-color="#0f766e"/>
+                  </linearGradient>
+                </defs>
+                <rect width="1600" height="900" fill="url(#ceuIlhas)"/>
+                <circle cx="1300" cy="190" r="95" fill="#fbbf24" opacity="0.85"/>
+                <rect y="500" width="1600" height="400" fill="url(#marIlhas)"/>
+                <path d="M0 540 Q110 470 240 540 Q330 500 430 540 Q540 480 660 540 Q780 500 900 540 Q1020 480 1140 540 Q1260 500 1380 540 Q1470 510 1600 540 V580 H0 Z" fill="#115e59" opacity="0.75"/>
+                <g>
+                  <path d="M860 690 H1230 L1150 760 H940 Z" fill="#c2410c"/>
+                  <path d="M1040 690 V430" stroke="#1c1917" stroke-width="10"/>
+                  <path d="M1040 450 L1180 660 H1040 Z" fill="#f5f5f4"/>
+                  <path d="M1030 480 L920 660 H1030 Z" fill="#e7e5e4"/>
+                  <path d="M1040 430 L1140 460 L1040 500 Z" fill="#fbbf24"/>
+                </g>
+                <g stroke="#f0fdfa" stroke-width="6" stroke-linecap="round" opacity="0.55">
+                  <path d="M700 800 Q760 780 820 800"/>
+                  <path d="M880 840 Q940 820 1000 840"/>
+                  <path d="M1120 810 Q1180 790 1240 810"/>
+                  <path d="M760 870 Q830 850 900 870"/>
+                </g>
+                <g fill="none" stroke="#1c1917" stroke-width="4" stroke-linecap="round" opacity="0.55">
+                  <path d="M420 260 q16 -14 32 0 q16 -14 32 0"/>
+                  <path d="M520 210 q14 -12 28 0 q14 -12 28 0"/>
+                  <path d="M610 300 q12 -10 24 0 q12 -10 24 0"/>
+                </g>
+                <g fill="#115e59" opacity="0.7">
+                  <ellipse cx="260" cy="520" rx="170" ry="28"/>
+                  <ellipse cx="1340" cy="540" rx="190" ry="24"/>
+                </g>
+              </svg>
+              <div class="carousel-caption legenda-slide">
+                <span class="badge text-bg-warning text-dark mb-2">Baía de Todos-os-Santos</span>
+                <h2 class="h3 fw-bold">Ilhas da Baía em escuna</h2>
+                <p class="mb-0">Navegação de um dia pelas ilhas de Itaparica e dos Frades, com almoço incluído.</p>
               </div>
             </div>
           </div>
 
-          <button class="carousel-control-prev" type="button" data-bs-target="#carrosselAcademias" data-bs-slide="prev">
+          <button class="carousel-control-prev" type="button" data-bs-target="#carrosselPasseios" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Slide anterior</span>
           </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carrosselAcademias" data-bs-slide="next">
+          <button class="carousel-control-next" type="button" data-bs-target="#carrosselPasseios" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Próximo slide</span>
           </button>
-        </div>
+        </section>
       </div>
     </section>
 
-    <section id="academias" class="py-4 py-lg-5" aria-labelledby="titulo-academias">
+    <section id="passeios" class="bg-white py-4 py-lg-5" aria-labelledby="tituloPasseios">
       <div class="container">
         <div class="text-center mb-4">
-          <h2 id="titulo-academias" class="fw-bold">Nossas academias</h2>
-          <p class="text-secondary mb-0">Três unidades em Salvador com estrutura completa para o seu treino.</p>
+          <h2 id="tituloPasseios" class="fw-bold">Passeios em destaque</h2>
+          <p class="text-secondary mb-0">Três roteiros para conhecer Salvador com guias locais.</p>
         </div>
 
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
           <div class="col">
-            <article class="card h-100 shadow-sm border-0">
-              <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&amp;fit=crop&amp;w=800&amp;q=80" class="card-img-top" style="height: 200px; object-fit: cover;" alt="Atleta treinando com pesos na unidade Barra">
-              <div class="card-body d-flex flex-column">
-                <h3 class="card-title h5">Unidade Barra</h3>
-                <p class="card-text text-secondary flex-grow-1">Musculação, cardio e área de peso livre na orla da Barra, com vista para o mar.</p>
-                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalAcademia" data-academia-nome="Unidade Barra" data-academia-descricao="Estrutura completa de musculação e cardio a poucos metros do Farol da Barra, com horários estendidos durante a semana." data-academia-endereco="Avenida Oceânica, 1200 - Barra" data-academia-horario="Segunda a sexta, 5h às 23h. Sábado e domingo, 7h às 15h.">Ver detalhes</button>
+            <article class="card h-100 border-0 shadow-sm faixa-card">
+              <div class="card-body d-flex flex-column p-4">
+                <p class="text-uppercase small fw-semibold text-teal mb-1">Centro histórico</p>
+                <h3 class="card-title h4">Pelourinho Histórico</h3>
+                <p class="card-text text-secondary flex-grow-1">Caminhada guiada por praças, igrejas barrocas e casarões coloniais, com paradas para fotos e histórias dos guias locais.</p>
+                <dl class="row small text-secondary mb-4">
+                  <dt class="col-5 fw-normal">Duração</dt>
+                  <dd class="col-7 text-end mb-0">3 horas</dd>
+                  <dt class="col-5 fw-normal">Valor</dt>
+                  <dd class="col-7 text-end mb-0 fw-semibold text-dark">R$ 90 por pessoa</dd>
+                </dl>
+                <button type="button" class="btn btn-coral w-100 botao-detalhes" data-passeio-nome="Pelourinho Histórico" data-passeio-valor="pelourinho" data-passeio-descricao="Um percurso a pé pelo coração de Salvador, começando na Praça da Sé e terminando no Largo do Santo Antônio Além do Carmo. O roteiro inclui a Igreja de São Francisco, o Largo do Pelourinho e mirantes do centro histórico." data-passeio-duracao="3 horas" data-passeio-encontro="Praça da Sé, em frente à Catedral Basílica" data-passeio-inclui="Guia credenciado, entrada na Igreja de São Francisco e água mineral" data-passeio-preco="R$ 90 por pessoa">Ver detalhes</button>
               </div>
             </article>
           </div>
 
           <div class="col">
-            <article class="card h-100 shadow-sm border-0">
-              <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&amp;fit=crop&amp;w=800&amp;q=80" class="card-img-top" style="height: 200px; object-fit: cover;" alt="Aula coletiva de ginástica na unidade Rio Vermelho">
-              <div class="card-body d-flex flex-column">
-                <h3 class="card-title h5">Unidade Rio Vermelho</h3>
-                <p class="card-text text-secondary flex-grow-1">Aulas de dança, ginástica e funcional em um espaço amplo e climatizado no Rio Vermelho.</p>
-                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalAcademia" data-academia-nome="Unidade Rio Vermelho" data-academia-descricao="Espaço dedicado a aulas coletivas, com estúdio de dança, sala de ginástica e treino funcional para todos os níveis." data-academia-endereco="Rua da Paciência, 340 - Rio Vermelho" data-academia-horario="Segunda a sexta, 6h às 22h. Sábado, 8h às 14h.">Ver detalhes</button>
+            <article class="card h-100 border-0 shadow-sm faixa-card">
+              <div class="card-body d-flex flex-column p-4">
+                <p class="text-uppercase small fw-semibold text-teal mb-1">Orla</p>
+                <h3 class="card-title h4">Farol da Barra</h3>
+                <p class="card-text text-secondary flex-grow-1">Passeio pela orla com visita ao Forte de Santo Antônio da Barra e vista panorâmica para a Baía de Todos-os-Santos.</p>
+                <dl class="row small text-secondary mb-4">
+                  <dt class="col-5 fw-normal">Duração</dt>
+                  <dd class="col-7 text-end mb-0">2 horas e 30 minutos</dd>
+                  <dt class="col-5 fw-normal">Valor</dt>
+                  <dd class="col-7 text-end mb-0 fw-semibold text-dark">R$ 70 por pessoa</dd>
+                </dl>
+                <button type="button" class="btn btn-coral w-100 botao-detalhes" data-passeio-nome="Farol da Barra" data-passeio-valor="farol" data-passeio-descricao="Caminhada pela orla da Barra com parada no Forte de Santo Antônio da Barra, onde funciona o Museu Náutico. O guia apresenta a história do farol e o pôr do sol na baía." data-passeio-duracao="2 horas e 30 minutos" data-passeio-encontro="Portão do Forte de Santo Antônio da Barra" data-passeio-inclui="Guia credenciado e ingresso do Museu Náutico" data-passeio-preco="R$ 70 por pessoa">Ver detalhes</button>
               </div>
             </article>
           </div>
 
           <div class="col">
-            <article class="card h-100 shadow-sm border-0">
-              <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&amp;fit=crop&amp;w=800&amp;q=80" class="card-img-top" style="height: 200px; object-fit: cover;" alt="Treino com personal trainer na unidade Pituba">
-              <div class="card-body d-flex flex-column">
-                <h3 class="card-title h5">Unidade Pituba</h3>
-                <p class="card-text text-secondary flex-grow-1">Personal trainers e avaliação física em uma unidade moderna próxima à Avenida Tancredo Neves.</p>
-                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalAcademia" data-academia-nome="Unidade Pituba" data-academia-descricao="Unidade moderna com acompanhamento de personal trainers, avaliação física e programas de treino personalizados." data-academia-endereco="Avenida Tancredo Neves, 850 - Pituba" data-academia-horario="Segunda a sexta, 5h30 às 22h30. Sábado, 7h às 13h.">Ver detalhes</button>
+            <article class="card h-100 border-0 shadow-sm faixa-card">
+              <div class="card-body d-flex flex-column p-4">
+                <p class="text-uppercase small fw-semibold text-teal mb-1">Baía de Todos-os-Santos</p>
+                <h3 class="card-title h4">Ilhas da Baía</h3>
+                <p class="card-text text-secondary flex-grow-1">Navegação de um dia em escuna pelas ilhas de Itaparica e dos Frades, com paradas para banho e almoço.</p>
+                <dl class="row small text-secondary mb-4">
+                  <dt class="col-5 fw-normal">Duração</dt>
+                  <dd class="col-7 text-end mb-0">8 horas</dd>
+                  <dt class="col-5 fw-normal">Valor</dt>
+                  <dd class="col-7 text-end mb-0 fw-semibold text-dark">R$ 220 por pessoa</dd>
+                </dl>
+                <button type="button" class="btn btn-coral w-100 botao-detalhes" data-passeio-nome="Ilhas da Baía" data-passeio-valor="ilhas" data-passeio-descricao="Saída da Marina da Penha em escuna com paradas para banho nas ilhas de Itaparica e dos Frades. O passeio inclui almoço, música ao vivo e retorno no fim da tarde." data-passeio-duracao="8 horas" data-passeio-encontro="Marina da Penha, entrada principal" data-passeio-inclui="Transporte marítimo, almoço, guia e colete salva-vidas" data-passeio-preco="R$ 220 por pessoa">Ver detalhes</button>
               </div>
             </article>
           </div>
@@ -134,67 +402,74 @@
       </div>
     </section>
 
-    <section id="horarios" class="py-4 py-lg-5 bg-white" aria-labelledby="titulo-horarios">
+    <section id="saidas" class="py-4 py-lg-5" aria-labelledby="tituloSaidas">
       <div class="container">
         <div class="text-center mb-4">
-          <h2 id="titulo-horarios" class="fw-bold">Horários e vagas</h2>
-          <p class="text-secondary mb-0">Confira as turmas disponíveis e o número de vagas para a próxima semana.</p>
+          <h2 id="tituloSaidas" class="fw-bold">Saídas e vagas</h2>
+          <p class="text-secondary mb-0">Confira as próximas datas, os pontos de encontro e a disponibilidade.</p>
         </div>
 
-        <div class="table-responsive shadow-sm rounded-3">
-          <table class="table table-striped table-hover align-middle mb-0">
-            <caption class="px-3 py-2">Horários fictícios de aulas nas unidades SalvadorFit.</caption>
-            <thead class="table-dark">
+        <div class="table-responsive bg-white rounded-4 shadow-sm">
+          <table class="table table-striped table-hover align-middle mb-0 tabela-marinho">
+            <caption class="caption-top px-3 pt-3 text-secondary">Saídas fictícias para a próxima semana. Valores por pessoa.</caption>
+            <thead>
               <tr>
-                <th scope="col">Unidade</th>
-                <th scope="col">Modalidade</th>
-                <th scope="col">Dia</th>
+                <th scope="col">Passeio</th>
+                <th scope="col">Dias</th>
                 <th scope="col">Horário</th>
+                <th scope="col">Ponto de encontro</th>
                 <th scope="col">Vagas</th>
+                <th scope="col">Valor</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <th scope="row">Barra</th>
-                <td>Musculação</td>
-                <td>Segunda-feira</td>
-                <td>07h00</td>
-                <td><span class="badge text-bg-success">12 vagas</span></td>
-              </tr>
-              <tr>
-                <th scope="row">Rio Vermelho</th>
-                <td>Ginástica</td>
-                <td>Terça-feira</td>
-                <td>18h30</td>
-                <td><span class="badge text-bg-warning">4 vagas</span></td>
-              </tr>
-              <tr>
-                <th scope="row">Pituba</th>
-                <td>Funcional</td>
-                <td>Quarta-feira</td>
-                <td>06h00</td>
-                <td><span class="badge text-bg-success">9 vagas</span></td>
-              </tr>
-              <tr>
-                <th scope="row">Barra</th>
-                <td>Spinning</td>
-                <td>Quinta-feira</td>
-                <td>19h00</td>
-                <td><span class="badge text-bg-danger">Esgotado</span></td>
-              </tr>
-              <tr>
-                <th scope="row">Rio Vermelho</th>
-                <td>Dança</td>
-                <td>Sexta-feira</td>
-                <td>17h30</td>
-                <td><span class="badge text-bg-success">15 vagas</span></td>
-              </tr>
-              <tr>
-                <th scope="row">Pituba</th>
-                <td>Personal Trainer</td>
-                <td>Sábado</td>
+                <th scope="row">Pelourinho Histórico</th>
+                <td>Segunda e quarta</td>
                 <td>09h00</td>
-                <td><span class="badge text-bg-warning">2 vagas</span></td>
+                <td>Praça da Sé</td>
+                <td><span class="badge text-bg-success">8 vagas</span></td>
+                <td>R$ 90</td>
+              </tr>
+              <tr>
+                <th scope="row">Farol da Barra</th>
+                <td>Terça e quinta</td>
+                <td>16h30</td>
+                <td>Forte da Barra</td>
+                <td><span class="badge text-bg-warning">5 vagas</span></td>
+                <td>R$ 70</td>
+              </tr>
+              <tr>
+                <th scope="row">Ilhas da Baía</th>
+                <td>Sexta</td>
+                <td>08h00</td>
+                <td>Marina da Penha</td>
+                <td><span class="badge text-bg-danger">Esgotado</span></td>
+                <td>R$ 220</td>
+              </tr>
+              <tr>
+                <th scope="row">Mercado Modelo e Bonfim</th>
+                <td>Sábado</td>
+                <td>10h00</td>
+                <td>Mercado Modelo</td>
+                <td><span class="badge text-bg-success">12 vagas</span></td>
+                <td>R$ 80</td>
+              </tr>
+              <tr>
+                <th scope="row">Pelourinho Histórico</th>
+                <td>Sábado</td>
+                <td>15h00</td>
+                <td>Praça da Sé</td>
+                <td><span class="badge text-bg-warning">3 vagas</span></td>
+                <td>R$ 90</td>
+              </tr>
+              <tr>
+                <th scope="row">Farol da Barra</th>
+                <td>Domingo</td>
+                <td>16h00</td>
+                <td>Forte da Barra</td>
+                <td><span class="badge text-bg-success">10 vagas</span></td>
+                <td>R$ 70</td>
               </tr>
             </tbody>
           </table>
@@ -202,64 +477,65 @@
       </div>
     </section>
 
-    <section id="reservar" class="py-4 py-lg-5" aria-labelledby="titulo-reservar">
+    <section id="reservar" class="bg-white py-4 py-lg-5" aria-labelledby="tituloReservar">
       <div class="container">
         <div class="row justify-content-center">
-          <div class="col-12 col-lg-8">
-            <div class="bg-white shadow-sm rounded-4 p-4 p-md-5">
+          <div class="col-12 col-lg-9">
+            <div class="bg-body-tertiary rounded-4 shadow-sm p-4 p-md-5">
               <div class="text-center mb-4">
-                <h2 id="titulo-reservar" class="fw-bold">Reserve sua aula experimental</h2>
-                <p class="text-secondary mb-0">Preencha os dados abaixo e nossa equipe confirmará sua reserva.</p>
+                <h2 id="tituloReservar" class="fw-bold">Reserve seu passeio</h2>
+                <p class="text-secondary mb-0">Preencha os dados e nossa equipe confirmará a disponibilidade por e-mail.</p>
               </div>
 
               <div id="mensagemSucesso" class="alert alert-success d-none" role="status" aria-live="polite">
-                Reserva enviada com sucesso! Entraremos em contato para confirmar o horário.
+                Solicitação enviada! Nossa equipe confirmará a disponibilidade do passeio escolhido.
               </div>
 
-              <form id="formularioReserva">
+              <form id="formularioReserva" novalidate>
                 <div class="row g-3">
                   <div class="col-12 col-md-6">
                     <label for="nome" class="form-label">Nome completo</label>
-                    <input type="text" class="form-control" id="nome" name="nome" placeholder="Seu nome" required>
+                    <input type="text" class="form-control" id="nome" name="nome" autocomplete="name" placeholder="Seu nome" required>
+                    <div class="invalid-feedback">Informe seu nome completo.</div>
                   </div>
                   <div class="col-12 col-md-6">
                     <label for="email" class="form-label">E-mail</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="voce@exemplo.com" required>
+                    <input type="email" class="form-control" id="email" name="email" autocomplete="email" placeholder="voce@exemplo.com" required>
+                    <div class="invalid-feedback">Informe um e-mail válido.</div>
                   </div>
                   <div class="col-12 col-md-6">
                     <label for="telefone" class="form-label">Telefone</label>
-                    <input type="tel" class="form-control" id="telefone" name="telefone" placeholder="(71) 90000-0000" pattern="\([0-9]{2}\) [0-9]{4,5}-[0-9]{4}" required>
+                    <input type="tel" class="form-control" id="telefone" name="telefone" autocomplete="tel" placeholder="(71) 90000-0000" pattern="\([0-9]{2}\) [0-9]{4,5}-[0-9]{4}" aria-describedby="ajudaTelefone" required>
+                    <div id="ajudaTelefone" class="form-text">Formato: (71) 90000-0000</div>
+                    <div class="invalid-feedback">Use o formato (71) 90000-0000.</div>
                   </div>
                   <div class="col-12 col-md-6">
-                    <label for="unidade" class="form-label">Unidade</label>
-                    <select class="form-select" id="unidade" name="unidade" required>
-                      <option value="" selected disabled>Escolha uma unidade</option>
-                      <option value="barra">Barra</option>
-                      <option value="rio-vermelho">Rio Vermelho</option>
-                      <option value="pituba">Pituba</option>
+                    <label for="passeio" class="form-label">Passeio</label>
+                    <select class="form-select" id="passeio" name="passeio" required>
+                      <option value="" selected disabled>Escolha um passeio</option>
+                      <option value="pelourinho">Pelourinho Histórico</option>
+                      <option value="farol">Farol da Barra</option>
+                      <option value="ilhas">Ilhas da Baía</option>
+                      <option value="mercado">Mercado Modelo e Bonfim</option>
                     </select>
+                    <div class="invalid-feedback">Escolha um passeio.</div>
                   </div>
                   <div class="col-12 col-md-6">
                     <label for="data" class="form-label">Data desejada</label>
                     <input type="date" class="form-control" id="data" name="data" required>
+                    <div class="invalid-feedback">Escolha uma data.</div>
                   </div>
                   <div class="col-12 col-md-6">
-                    <label for="modalidade" class="form-label">Modalidade</label>
-                    <select class="form-select" id="modalidade" name="modalidade" required>
-                      <option value="" selected disabled>Escolha uma modalidade</option>
-                      <option value="musculacao">Musculação</option>
-                      <option value="ginastica">Ginástica</option>
-                      <option value="funcional">Funcional</option>
-                      <option value="spinning">Spinning</option>
-                      <option value="danca">Dança</option>
-                    </select>
+                    <label for="quantidade" class="form-label">Quantidade de pessoas</label>
+                    <input type="number" class="form-control" id="quantidade" name="quantidade" min="1" max="10" placeholder="2" required>
+                    <div class="invalid-feedback">Informe de 1 a 10 pessoas.</div>
                   </div>
                   <div class="col-12">
-                    <label for="mensagem" class="form-label">Mensagem</label>
-                    <textarea class="form-control" id="mensagem" name="mensagem" rows="3" placeholder="Conte-nos sobre seu objetivo de treino"></textarea>
+                    <label for="observacoes" class="form-label">Observações</label>
+                    <textarea class="form-control" id="observacoes" name="observacoes" rows="3" placeholder="Conte-nos sobre necessidades de acessibilidade, crianças ou outros detalhes"></textarea>
                   </div>
                   <div class="col-12 d-grid d-sm-flex justify-content-sm-end">
-                    <button type="submit" class="btn btn-success btn-lg px-4">Enviar reserva</button>
+                    <button type="submit" class="btn btn-coral btn-lg px-4">Solicitar reserva</button>
                   </div>
                 </div>
               </form>
@@ -268,43 +544,51 @@
         </div>
       </div>
     </section>
-
   </main>
 
-  <footer class="bg-dark text-white-50 py-4">
+  <footer class="bg-marinho text-white py-5">
     <div class="container">
-      <div class="row gy-3 align-items-center">
-        <div class="col-12 col-md-6">
-          <p class="fw-bold text-white mb-1">SalvadorFit</p>
-          <p class="mb-0">Reservas de academia em Salvador, BA. Conteúdo fictício para fins educacionais.</p>
+      <div class="row gy-4 justify-content-between">
+        <div class="col-12 col-md-5">
+          <p class="fs-4 fw-bold mb-2">Rota do <span class="text-ambar">Dendê</span></p>
+          <p class="text-white-50 mb-0">Passeios guiados por Salvador, BA. Conteúdo fictício criado para fins educacionais.</p>
         </div>
-        <div class="col-12 col-md-6 text-md-end">
-          <p class="mb-1">Av. Oceânica, 1200 - Barra, Salvador - BA</p>
-          <p class="mb-0">contato@salvadorfit.example</p>
+        <div class="col-12 col-md-4">
+          <h2 class="h6 text-uppercase text-ambar">Contato</h2>
+          <address class="mb-0 text-white-50">
+            Rua do Passo, 12 - Santo Antônio<br>
+            Salvador - BA<br>
+            <a class="link-rodape" href="mailto:contato@rotadodende.example">contato@rotadodende.example</a><br>
+            <a class="link-rodape" href="tel:+557190000000">(71)&nbsp;90000&#8209;0000</a>
+          </address>
         </div>
       </div>
     </div>
   </footer>
 
-  <div class="modal fade" id="modalAcademia" tabindex="-1" aria-labelledby="modalAcademiaTitulo" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2 class="modal-title fs-5" id="modalAcademiaTitulo">Detalhes da academia</h2>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar modal"></button>
+  <div class="modal fade" id="modalPasseio" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="tituloModalPasseio" aria-describedby="descricaoModalPasseio">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 rounded-4 overflow-hidden">
+        <div class="modal-header bg-marinho text-white">
+          <h2 class="modal-title fs-4" id="tituloModalPasseio">Detalhes do passeio</h2>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar detalhes do passeio"></button>
         </div>
-        <div class="modal-body">
-          <p id="modalAcademiaDescricao" class="mb-3"></p>
+        <div class="modal-body p-4 p-md-5">
+          <p id="descricaoModalPasseio" class="text-secondary mb-4"></p>
           <dl class="row mb-0">
-            <dt class="col-sm-4">Endereço</dt>
-            <dd class="col-sm-8" id="modalAcademiaEndereco"></dd>
-            <dt class="col-sm-4">Horário</dt>
-            <dd class="col-sm-8 mb-0" id="modalAcademiaHorario"></dd>
+            <dt class="col-sm-4">Duração</dt>
+            <dd class="col-sm-8" id="duracaoModalPasseio"></dd>
+            <dt class="col-sm-4">Ponto de encontro</dt>
+            <dd class="col-sm-8" id="encontroModalPasseio"></dd>
+            <dt class="col-sm-4">Inclui</dt>
+            <dd class="col-sm-8" id="incluiModalPasseio"></dd>
+            <dt class="col-sm-4">Valor</dt>
+            <dd class="col-sm-8 mb-0 fw-semibold" id="precoModalPasseio"></dd>
           </dl>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Fechar</button>
-          <a href="#reservar" class="btn btn-success" data-bs-dismiss="modal">Reservar agora</a>
+          <button type="button" class="btn btn-outline-marinho" data-bs-dismiss="modal">Fechar</button>
+          <button type="button" class="btn btn-coral" id="botaoReservarPasseio">Reservar este passeio</button>
         </div>
       </div>
     </div>
@@ -312,18 +596,35 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    const tituloModal = document.getElementById('modalAcademiaTitulo');
-    const descricaoModal = document.getElementById('modalAcademiaDescricao');
-    const enderecoModal = document.getElementById('modalAcademiaEndereco');
-    const horarioModal = document.getElementById('modalAcademiaHorario');
+    const modalPasseio = document.getElementById('modalPasseio');
+    const instanciaModalPasseio = new bootstrap.Modal(modalPasseio);
+    const tituloModalPasseio = document.getElementById('tituloModalPasseio');
+    const descricaoModalPasseio = document.getElementById('descricaoModalPasseio');
+    const duracaoModalPasseio = document.getElementById('duracaoModalPasseio');
+    const encontroModalPasseio = document.getElementById('encontroModalPasseio');
+    const incluiModalPasseio = document.getElementById('incluiModalPasseio');
+    const precoModalPasseio = document.getElementById('precoModalPasseio');
+    let passeioSelecionado = '';
 
-    document.querySelectorAll('[data-academia-nome]').forEach(function (botao) {
+    document.querySelectorAll('.botao-detalhes').forEach(function (botao) {
       botao.addEventListener('click', function () {
-        tituloModal.textContent = botao.dataset.academiaNome;
-        descricaoModal.textContent = botao.dataset.academiaDescricao;
-        enderecoModal.textContent = botao.dataset.academiaEndereco;
-        horarioModal.textContent = botao.dataset.academiaHorario;
+        tituloModalPasseio.textContent = botao.dataset.passeioNome;
+        descricaoModalPasseio.textContent = botao.dataset.passeioDescricao;
+        duracaoModalPasseio.textContent = botao.dataset.passeioDuracao;
+        encontroModalPasseio.textContent = botao.dataset.passeioEncontro;
+        incluiModalPasseio.textContent = botao.dataset.passeioInclui;
+        precoModalPasseio.textContent = botao.dataset.passeioPreco;
+        passeioSelecionado = botao.dataset.passeioValor;
+        instanciaModalPasseio.show();
       });
+    });
+
+    document.getElementById('botaoReservarPasseio').addEventListener('click', function () {
+      const selectPasseio = document.getElementById('passeio');
+      selectPasseio.value = passeioSelecionado;
+      instanciaModalPasseio.hide();
+      document.getElementById('reservar').scrollIntoView({ behavior: 'smooth' });
+      selectPasseio.focus({ preventScroll: true });
     });
 
     const formularioReserva = document.getElementById('formularioReserva');
@@ -331,6 +632,12 @@
 
     formularioReserva.addEventListener('submit', function (evento) {
       evento.preventDefault();
+      if (!formularioReserva.checkValidity()) {
+        formularioReserva.classList.add('was-validated');
+        formularioReserva.reportValidity();
+        return;
+      }
+      formularioReserva.classList.remove('was-validated');
       mensagemSucesso.classList.remove('d-none');
       formularioReserva.reset();
       mensagemSucesso.scrollIntoView({ behavior: 'smooth', block: 'center' });
